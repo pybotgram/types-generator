@@ -74,11 +74,10 @@ def scrape():
                 children = list(tr.find_all("td"))
                 if len(children) == 3:
                     desc = "\n".join(get_description(children[2]))
-                    types = [
-                        get_types(x) 
-                        for x 
-                        in children[1].get_text().split(" or ")
-                    ]
+                    types = list(map(
+                        get_types, 
+                        children[1].get_text().split(" or ")
+                    ))
                     fields.append(
                         {
                             "name": children[0].get_text(),
