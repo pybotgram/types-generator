@@ -1,0 +1,25 @@
+class {name}(Object):
+    """{description}
+    """
+
+    def __init__(
+        self,{arguments}
+        **_kwargs: Any
+    ):
+        {fields}
+
+    @classmethod
+    def _parse(
+        cls, data: Dict[str, Any], bot: "pybotgram.Bot"
+    ) -> Optional[Type["{name}"]]:
+        if not (isinstance(data, dict) and data):
+            return None
+
+        {instructions}
+        _type_{snake_name}: Dict[str, Type["{name}"]] = {{}}
+        _type = data.get("")
+
+        if cls is {name} and _type in _type_{snake_name}:
+            return _type_{snake_name}[_type]._parse(data, bot)
+
+        return cls(**data, bot=bot)

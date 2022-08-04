@@ -1,5 +1,7 @@
-from typing import Any
+from typing import Optional, Dict, Any
 
+import pybotgram
 from .base import Object
+
 
 {content}

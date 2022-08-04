@@ -86,7 +86,7 @@ class Generator:
                 else:
                     arguments += f"Union[{data}]"
             
-            arguments += " = None" if not x["required"] else ""
+            arguments += " = None," if not x["required"] else ","
         
         return arguments
 
@@ -102,6 +102,21 @@ class Generator:
                 fields += f"self.{x['name']} = {x['name']}"
         
         return fields
+
+    def get_instructions(self):
+        instructions = ""
+
+        for x in self.fields:
+            if len(x["types"])==1:
+                i = self.types_to_instructions(x["name"], x["types"][0])
+                if i:
+                    instructions += f"\n        data[\"{x['name']}\"] = "
+                    instructions += i
+        
+        if instructions:
+            instructions += "\n"
+        
+        return instructions
     
     def get_description_field(
         self, 
@@ -153,6 +168,17 @@ class Generator:
         else:
             return f"\"types.{types}\""
 
+    def types_to_instructions(self, name, types):
+        if TYPES.get(types, None):
+            return False
+        elif "Array" in types:
+            nname = types.split("Array of ")[-1]
+            if not TYPES.get(nname, False):
+                return f"types.{nname}._parse_list(data.get(\"{name}\"), bot)"
+            return False
+        else:
+            return f"types.{types}._parse(data.get(\"{name}\"), bot)"
+
     is_optional = lambda _, optional: "" if optional else ", *optional*"
 
 
@@ -160,15 +186,66 @@ def main():
     with open("api.json", "r") as f:
         docs = json.load(f)
     
+    with open("templates/types_class.txt") as f:
+        template_class = f.read()
+
+    with open("templates/types_subtypes.txt") as f:
+        template_subtypes = f.read()
+    
+    with open("templates/types.txt") as f:
+        template_types = f.read()
+    
     for x in docs["types"].values():
         name = x["name"]
-        description = x["description"]
-        fields = x.get("fields", [])
         subtypes = x.get("subtypes", [])
         class_object = x.get("subtype_of", "Object")
 
-        gen = Generator(name, description, fields, subtypes)
+        gen = Generator(name, x["description"], x.get("fields", []), subtypes)
         file_name = gen.get_file_name()
+
+        if subtypes:
+            arguments = ""
+            fields_subtypes = ""
+            types_subtypes = [
+                [
+                    (y["name"], y["types"][0]) 
+                    for y in docs["types"][x]["fields"]
+                ]
+                for x in subtypes 
+            ]
+            types_common = set.intersection(*map(set, types_subtypes))
+
+            if types_common:
+                arguments += "\n        *,"
+
+            for y in types_common:
+                arguments += "\n        "
+                fields_subtypes += "\n        "
+                arguments += f"{y[0]}: {gen.types_to_type(y[1])},"
+                fields_subtypes += f"self.{y[0]} = {y[0]}"
+            
+            with open(f"types/{file_name}.py", "w") as f:
+                f.write(template_types.format(
+                    content=template_subtypes.format(
+                        name=name,
+                        description=gen.get_description(),
+                        arguments=arguments,
+                        fields=fields_subtypes,
+                        instructions=gen.get_instructions(),
+                        snake_name=file_name
+                    )
+                ))
+
+        elif isinstance(class_object, list):
+            with open(f"types/{camel_to_snake(class_object[0])}.py", "a") as f:
+                f.write("\n\n\n" + template_class.format(
+                    name=name, 
+                    class_object=class_object[0],
+                    description=gen.get_description(),
+                    arguments=gen.get_arguments(),
+                    fields=gen.get_fields(),
+                    instructions=gen.get_instructions()
+                ))
 
 
 if __name__ == "__main__":

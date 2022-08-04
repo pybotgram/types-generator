@@ -7,3 +7,16 @@ class {name}({class_object}):
         **_kwargs: Any
     ):
         {fields}
+
+    @classmethod
+    def _parse(
+        cls, 
+        data: Dict[str, Any],
+        bot: "pybotgram.Bot"
+    ) -> Optional["{name}"]:
+        if not (isinstance(data, dict) and data):
+            return None
+        
+        data = data.copy()
+        {instructions}
+        return cls(bot=bot, **data)
