@@ -67,7 +67,10 @@ def scrape():
             continue
 
         if x.name == "p":
-            RESULT["types"][current_types]["description"] = get_description(x)
+            RESULT["types"][current_types].setdefault(
+                "description", 
+                []
+            ).extend(get_description(x))
 
         if x.name == "table":
             tbody = x.find("tbody")
@@ -109,7 +112,7 @@ def main():
 
     for k, v in RESULT["types"].items():
         for x in v.get("subtypes", []):
-            RESULT["types"][x]["subtype_of"] = k
+            RESULT["types"][x].setdefault("subtype_of", []).append(k)
 
     with open("api.json", "w") as f:
         json.dump(RESULT, f, indent=4)

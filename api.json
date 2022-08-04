@@ -2139,6 +2139,7 @@
             "name": "KeyboardButton",
             "href": "https://core.telegram.org/bots/api#keyboardbutton",
             "description": [
+                "This object represents one button of the reply keyboard. For simple text buttons String can be used instead of this object to specify text of the button. Optional fields web_app, request_contact, request_location, and request_poll are mutually exclusive.",
                 "Note: request_contact and request_location options will only work in Telegram versions released after 9 April, 2016. Older clients will display unsupported message.",
                 "Note: request_poll option will only work in Telegram versions released after 23 January, 2020. Older clients will display unsupported message.",
                 "Note: web_app option will only work in Telegram versions released after 16 April, 2022. Older clients will display unsupported message."
@@ -2232,6 +2233,7 @@
             "name": "InlineKeyboardMarkup",
             "href": "https://core.telegram.org/bots/api#inlinekeyboardmarkup",
             "description": [
+                "This object represents an inline keyboard that appears right next to the message it belongs to.",
                 "Note: This will only work in Telegram versions released after 9 April, 2016. Older clients will display unsupported message."
             ],
             "fields": [
@@ -2330,6 +2332,7 @@
             "name": "LoginUrl",
             "href": "https://core.telegram.org/bots/api#loginurl",
             "description": [
+                "This object represents a parameter of the inline keyboard button used to automatically authorize a user. Serves as a great replacement for the Telegram Login Widget when the user is coming from Telegram. All the user needs to do is tap/click a button and confirm that they want to log in:",
                 "Telegram apps support these buttons as of version 5.7."
             ],
             "fields": [
@@ -2745,7 +2748,9 @@
                     "description": "Optional. Custom title for this user"
                 }
             ],
-            "subtype_of": "ChatMember"
+            "subtype_of": [
+                "ChatMember"
+            ]
         },
         "ChatMemberAdministrator": {
             "name": "ChatMemberAdministrator",
@@ -2875,7 +2880,9 @@
                     "description": "Optional. Custom title for this user"
                 }
             ],
-            "subtype_of": "ChatMember"
+            "subtype_of": [
+                "ChatMember"
+            ]
         },
         "ChatMemberMember": {
             "name": "ChatMemberMember",
@@ -2901,7 +2908,9 @@
                     "description": "Information about the user"
                 }
             ],
-            "subtype_of": "ChatMember"
+            "subtype_of": [
+                "ChatMember"
+            ]
         },
         "ChatMemberRestricted": {
             "name": "ChatMemberRestricted",
@@ -3007,7 +3016,9 @@
                     "description": "Date when restrictions will be lifted for this user; unix time. If 0, then the user is restricted forever"
                 }
             ],
-            "subtype_of": "ChatMember"
+            "subtype_of": [
+                "ChatMember"
+            ]
         },
         "ChatMemberLeft": {
             "name": "ChatMemberLeft",
@@ -3033,7 +3044,9 @@
                     "description": "Information about the user"
                 }
             ],
-            "subtype_of": "ChatMember"
+            "subtype_of": [
+                "ChatMember"
+            ]
         },
         "ChatMemberBanned": {
             "name": "ChatMemberBanned",
@@ -3067,7 +3080,9 @@
                     "description": "Date when restrictions will be lifted for this user; unix time. If 0, then the user is banned forever"
                 }
             ],
-            "subtype_of": "ChatMember"
+            "subtype_of": [
+                "ChatMember"
+            ]
         },
         "ChatMemberUpdated": {
             "name": "ChatMemberUpdated",
@@ -3337,7 +3352,9 @@
                     "description": "Scope type, must be default"
                 }
             ],
-            "subtype_of": "BotCommandScope"
+            "subtype_of": [
+                "BotCommandScope"
+            ]
         },
         "BotCommandScopeAllPrivateChats": {
             "name": "BotCommandScopeAllPrivateChats",
@@ -3355,7 +3372,9 @@
                     "description": "Scope type, must be all_private_chats"
                 }
             ],
-            "subtype_of": "BotCommandScope"
+            "subtype_of": [
+                "BotCommandScope"
+            ]
         },
         "BotCommandScopeAllGroupChats": {
             "name": "BotCommandScopeAllGroupChats",
@@ -3373,7 +3392,9 @@
                     "description": "Scope type, must be all_group_chats"
                 }
             ],
-            "subtype_of": "BotCommandScope"
+            "subtype_of": [
+                "BotCommandScope"
+            ]
         },
         "BotCommandScopeAllChatAdministrators": {
             "name": "BotCommandScopeAllChatAdministrators",
@@ -3391,7 +3412,9 @@
                     "description": "Scope type, must be all_chat_administrators"
                 }
             ],
-            "subtype_of": "BotCommandScope"
+            "subtype_of": [
+                "BotCommandScope"
+            ]
         },
         "BotCommandScopeChat": {
             "name": "BotCommandScopeChat",
@@ -3418,7 +3441,9 @@
                     "description": "Unique identifier for the target chat or username of the target supergroup (in the format @supergroupusername)"
                 }
             ],
-            "subtype_of": "BotCommandScope"
+            "subtype_of": [
+                "BotCommandScope"
+            ]
         },
         "BotCommandScopeChatAdministrators": {
             "name": "BotCommandScopeChatAdministrators",
@@ -3445,7 +3470,9 @@
                     "description": "Unique identifier for the target chat or username of the target supergroup (in the format @supergroupusername)"
                 }
             ],
-            "subtype_of": "BotCommandScope"
+            "subtype_of": [
+                "BotCommandScope"
+            ]
         },
         "BotCommandScopeChatMember": {
             "name": "BotCommandScopeChatMember",
@@ -3480,12 +3507,18 @@
                     "description": "Unique identifier of the target user"
                 }
             ],
-            "subtype_of": "BotCommandScope"
+            "subtype_of": [
+                "BotCommandScope"
+            ]
         },
         "MenuButton": {
             "name": "MenuButton",
             "href": "https://core.telegram.org/bots/api#menubutton",
             "description": [
+                "This object describes the bot's menu button in a private chat. It should be one of",
+                "- MenuButtonCommands",
+                "- MenuButtonWebApp",
+                "- MenuButtonDefault",
                 "If a menu button other than MenuButtonDefault is set for a private chat, then it is applied in the chat. Otherwise the default menu button is applied. By default, the menu button opens the list of bot commands."
             ],
             "subtypes": [
@@ -3510,7 +3543,9 @@
                     "description": "Type of the button, must be commands"
                 }
             ],
-            "subtype_of": "MenuButton"
+            "subtype_of": [
+                "MenuButton"
+            ]
         },
         "MenuButtonWebApp": {
             "name": "MenuButtonWebApp",
@@ -3544,7 +3579,9 @@
                     "description": "Description of the Web App that will be launched when the user presses the button. The Web App will be able to send an arbitrary message on behalf of the user using the method answerWebAppQuery."
                 }
             ],
-            "subtype_of": "MenuButton"
+            "subtype_of": [
+                "MenuButton"
+            ]
         },
         "MenuButtonDefault": {
             "name": "MenuButtonDefault",
@@ -3562,7 +3599,9 @@
                     "description": "Type of the button, must be default"
                 }
             ],
-            "subtype_of": "MenuButton"
+            "subtype_of": [
+                "MenuButton"
+            ]
         },
         "ResponseParameters": {
             "name": "ResponseParameters",
@@ -3656,7 +3695,9 @@
                     "description": "Optional. List of special entities that appear in the caption, which can be specified instead of parse_mode"
                 }
             ],
-            "subtype_of": "InputMedia"
+            "subtype_of": [
+                "InputMedia"
+            ]
         },
         "InputMediaVideo": {
             "name": "InputMediaVideo",
@@ -3747,7 +3788,9 @@
                     "description": "Optional. Pass True, if the uploaded video is suitable for streaming"
                 }
             ],
-            "subtype_of": "InputMedia"
+            "subtype_of": [
+                "InputMedia"
+            ]
         },
         "InputMediaAnimation": {
             "name": "InputMediaAnimation",
@@ -3830,7 +3873,9 @@
                     "description": "Optional. Animation duration in seconds"
                 }
             ],
-            "subtype_of": "InputMedia"
+            "subtype_of": [
+                "InputMedia"
+            ]
         },
         "InputMediaAudio": {
             "name": "InputMediaAudio",
@@ -3913,7 +3958,9 @@
                     "description": "Optional. Title of the audio"
                 }
             ],
-            "subtype_of": "InputMedia"
+            "subtype_of": [
+                "InputMedia"
+            ]
         },
         "InputMediaDocument": {
             "name": "InputMediaDocument",
@@ -3980,7 +4027,9 @@
                     "description": "Optional. Disables automatic server-side content type detection for files uploaded using multipart/form-data. Always True, if the document is sent as part of an album."
                 }
             ],
-            "subtype_of": "InputMedia"
+            "subtype_of": [
+                "InputMedia"
+            ]
         },
         "InputFile": {
             "name": "InputFile",
@@ -4261,6 +4310,27 @@
             "name": "InlineQueryResult",
             "href": "https://core.telegram.org/bots/api#inlinequeryresult",
             "description": [
+                "This object represents one result of an inline query. Telegram clients currently support results of the following 20 types:",
+                "- InlineQueryResultCachedAudio",
+                "- InlineQueryResultCachedDocument",
+                "- InlineQueryResultCachedGif",
+                "- InlineQueryResultCachedMpeg4Gif",
+                "- InlineQueryResultCachedPhoto",
+                "- InlineQueryResultCachedSticker",
+                "- InlineQueryResultCachedVideo",
+                "- InlineQueryResultCachedVoice",
+                "- InlineQueryResultArticle",
+                "- InlineQueryResultAudio",
+                "- InlineQueryResultContact",
+                "- InlineQueryResultGame",
+                "- InlineQueryResultDocument",
+                "- InlineQueryResultGif",
+                "- InlineQueryResultLocation",
+                "- InlineQueryResultMpeg4Gif",
+                "- InlineQueryResultPhoto",
+                "- InlineQueryResultVenue",
+                "- InlineQueryResultVideo",
+                "- InlineQueryResultVoice",
                 "Note: All URLs passed in inline query results will be available to end users and therefore must be assumed to be public."
             ],
             "subtypes": [
@@ -4382,7 +4452,9 @@
                     "description": "Optional. Thumbnail height"
                 }
             ],
-            "subtype_of": "InlineQueryResult"
+            "subtype_of": [
+                "InlineQueryResult"
+            ]
         },
         "InlineQueryResultPhoto": {
             "name": "InlineQueryResultPhoto",
@@ -4496,7 +4568,9 @@
                     "description": "Optional. Content of the message to be sent instead of the photo"
                 }
             ],
-            "subtype_of": "InlineQueryResult"
+            "subtype_of": [
+                "InlineQueryResult"
+            ]
         },
         "InlineQueryResultGif": {
             "name": "InlineQueryResultGif",
@@ -4618,7 +4692,9 @@
                     "description": "Optional. Content of the message to be sent instead of the GIF animation"
                 }
             ],
-            "subtype_of": "InlineQueryResult"
+            "subtype_of": [
+                "InlineQueryResult"
+            ]
         },
         "InlineQueryResultMpeg4Gif": {
             "name": "InlineQueryResultMpeg4Gif",
@@ -4740,7 +4816,9 @@
                     "description": "Optional. Content of the message to be sent instead of the video animation"
                 }
             ],
-            "subtype_of": "InlineQueryResult"
+            "subtype_of": [
+                "InlineQueryResult"
+            ]
         },
         "InlineQueryResultVideo": {
             "name": "InlineQueryResultVideo",
@@ -4870,12 +4948,15 @@
                     "description": "Optional. Content of the message to be sent instead of the video. This field is required if InlineQueryResultVideo is used to send an HTML-page as a result (e.g., a YouTube video)."
                 }
             ],
-            "subtype_of": "InlineQueryResult"
+            "subtype_of": [
+                "InlineQueryResult"
+            ]
         },
         "InlineQueryResultAudio": {
             "name": "InlineQueryResultAudio",
             "href": "https://core.telegram.org/bots/api#inlinequeryresultaudio",
             "description": [
+                "Represents a link to an MP3 audio file. By default, this audio file will be sent by the user. Alternatively, you can use input_message_content to send a message with the specified content instead of the audio.",
                 "Note: This will only work in Telegram versions released after 9 April, 2016. Older clients will ignore them."
             ],
             "fields": [
@@ -4968,12 +5049,15 @@
                     "description": "Optional. Content of the message to be sent instead of the audio"
                 }
             ],
-            "subtype_of": "InlineQueryResult"
+            "subtype_of": [
+                "InlineQueryResult"
+            ]
         },
         "InlineQueryResultVoice": {
             "name": "InlineQueryResultVoice",
             "href": "https://core.telegram.org/bots/api#inlinequeryresultvoice",
             "description": [
+                "Represents a link to a voice recording in an .OGG container encoded with OPUS. By default, this voice recording will be sent by the user. Alternatively, you can use input_message_content to send a message with the specified content instead of the the voice message.",
                 "Note: This will only work in Telegram versions released after 9 April, 2016. Older clients will ignore them."
             ],
             "fields": [
@@ -5058,12 +5142,15 @@
                     "description": "Optional. Content of the message to be sent instead of the voice recording"
                 }
             ],
-            "subtype_of": "InlineQueryResult"
+            "subtype_of": [
+                "InlineQueryResult"
+            ]
         },
         "InlineQueryResultDocument": {
             "name": "InlineQueryResultDocument",
             "href": "https://core.telegram.org/bots/api#inlinequeryresultdocument",
             "description": [
+                "Represents a link to a file. By default, this file will be sent by the user with an optional caption. Alternatively, you can use input_message_content to send a message with the specified content instead of the file. Currently, only .PDF and .ZIP files can be sent using this method.",
                 "Note: This will only work in Telegram versions released after 9 April, 2016. Older clients will ignore them."
             ],
             "fields": [
@@ -5180,12 +5267,15 @@
                     "description": "Optional. Thumbnail height"
                 }
             ],
-            "subtype_of": "InlineQueryResult"
+            "subtype_of": [
+                "InlineQueryResult"
+            ]
         },
         "InlineQueryResultLocation": {
             "name": "InlineQueryResultLocation",
             "href": "https://core.telegram.org/bots/api#inlinequeryresultlocation",
             "description": [
+                "Represents a location on a map. By default, the location will be sent by the user. Alternatively, you can use input_message_content to send a message with the specified content instead of the location.",
                 "Note: This will only work in Telegram versions released after 9 April, 2016. Older clients will ignore them."
             ],
             "fields": [
@@ -5302,12 +5392,15 @@
                     "description": "Optional. Thumbnail height"
                 }
             ],
-            "subtype_of": "InlineQueryResult"
+            "subtype_of": [
+                "InlineQueryResult"
+            ]
         },
         "InlineQueryResultVenue": {
             "name": "InlineQueryResultVenue",
             "href": "https://core.telegram.org/bots/api#inlinequeryresultvenue",
             "description": [
+                "Represents a venue. By default, the venue will be sent by the user. Alternatively, you can use input_message_content to send a message with the specified content instead of the venue.",
                 "Note: This will only work in Telegram versions released after 9 April, 2016. Older clients will ignore them."
             ],
             "fields": [
@@ -5432,12 +5525,15 @@
                     "description": "Optional. Thumbnail height"
                 }
             ],
-            "subtype_of": "InlineQueryResult"
+            "subtype_of": [
+                "InlineQueryResult"
+            ]
         },
         "InlineQueryResultContact": {
             "name": "InlineQueryResultContact",
             "href": "https://core.telegram.org/bots/api#inlinequeryresultcontact",
             "description": [
+                "Represents a contact with a phone number. By default, this contact will be sent by the user. Alternatively, you can use input_message_content to send a message with the specified content instead of the contact.",
                 "Note: This will only work in Telegram versions released after 9 April, 2016. Older clients will ignore them."
             ],
             "fields": [
@@ -5530,12 +5626,15 @@
                     "description": "Optional. Thumbnail height"
                 }
             ],
-            "subtype_of": "InlineQueryResult"
+            "subtype_of": [
+                "InlineQueryResult"
+            ]
         },
         "InlineQueryResultGame": {
             "name": "InlineQueryResultGame",
             "href": "https://core.telegram.org/bots/api#inlinequeryresultgame",
             "description": [
+                "Represents a Game.",
                 "Note: This will only work in Telegram versions released after October 1, 2016. Older clients will not display any inline results if a game result is among them."
             ],
             "fields": [
@@ -5572,7 +5671,9 @@
                     "description": "Optional. Inline keyboard attached to the message"
                 }
             ],
-            "subtype_of": "InlineQueryResult"
+            "subtype_of": [
+                "InlineQueryResult"
+            ]
         },
         "InlineQueryResultCachedPhoto": {
             "name": "InlineQueryResultCachedPhoto",
@@ -5662,7 +5763,9 @@
                     "description": "Optional. Content of the message to be sent instead of the photo"
                 }
             ],
-            "subtype_of": "InlineQueryResult"
+            "subtype_of": [
+                "InlineQueryResult"
+            ]
         },
         "InlineQueryResultCachedGif": {
             "name": "InlineQueryResultCachedGif",
@@ -5744,7 +5847,9 @@
                     "description": "Optional. Content of the message to be sent instead of the GIF animation"
                 }
             ],
-            "subtype_of": "InlineQueryResult"
+            "subtype_of": [
+                "InlineQueryResult"
+            ]
         },
         "InlineQueryResultCachedMpeg4Gif": {
             "name": "InlineQueryResultCachedMpeg4Gif",
@@ -5826,12 +5931,15 @@
                     "description": "Optional. Content of the message to be sent instead of the video animation"
                 }
             ],
-            "subtype_of": "InlineQueryResult"
+            "subtype_of": [
+                "InlineQueryResult"
+            ]
         },
         "InlineQueryResultCachedSticker": {
             "name": "InlineQueryResultCachedSticker",
             "href": "https://core.telegram.org/bots/api#inlinequeryresultcachedsticker",
             "description": [
+                "Represents a link to a sticker stored on the Telegram servers. By default, this sticker will be sent by the user. Alternatively, you can use input_message_content to send a message with the specified content instead of the sticker.",
                 "Note: This will only work in Telegram versions released after 9 April, 2016 for static stickers and after 06 July, 2019 for animated stickers. Older clients will ignore them."
             ],
             "fields": [
@@ -5876,12 +5984,15 @@
                     "description": "Optional. Content of the message to be sent instead of the sticker"
                 }
             ],
-            "subtype_of": "InlineQueryResult"
+            "subtype_of": [
+                "InlineQueryResult"
+            ]
         },
         "InlineQueryResultCachedDocument": {
             "name": "InlineQueryResultCachedDocument",
             "href": "https://core.telegram.org/bots/api#inlinequeryresultcacheddocument",
             "description": [
+                "Represents a link to a file stored on the Telegram servers. By default, this file will be sent by the user with an optional caption. Alternatively, you can use input_message_content to send a message with the specified content instead of the file.",
                 "Note: This will only work in Telegram versions released after 9 April, 2016. Older clients will ignore them."
             ],
             "fields": [
@@ -5966,7 +6077,9 @@
                     "description": "Optional. Content of the message to be sent instead of the file"
                 }
             ],
-            "subtype_of": "InlineQueryResult"
+            "subtype_of": [
+                "InlineQueryResult"
+            ]
         },
         "InlineQueryResultCachedVideo": {
             "name": "InlineQueryResultCachedVideo",
@@ -6056,12 +6169,15 @@
                     "description": "Optional. Content of the message to be sent instead of the video"
                 }
             ],
-            "subtype_of": "InlineQueryResult"
+            "subtype_of": [
+                "InlineQueryResult"
+            ]
         },
         "InlineQueryResultCachedVoice": {
             "name": "InlineQueryResultCachedVoice",
             "href": "https://core.telegram.org/bots/api#inlinequeryresultcachedvoice",
             "description": [
+                "Represents a link to a voice message stored on the Telegram servers. By default, this voice message will be sent by the user. Alternatively, you can use input_message_content to send a message with the specified content instead of the voice message.",
                 "Note: This will only work in Telegram versions released after 9 April, 2016. Older clients will ignore them."
             ],
             "fields": [
@@ -6138,12 +6254,15 @@
                     "description": "Optional. Content of the message to be sent instead of the voice message"
                 }
             ],
-            "subtype_of": "InlineQueryResult"
+            "subtype_of": [
+                "InlineQueryResult"
+            ]
         },
         "InlineQueryResultCachedAudio": {
             "name": "InlineQueryResultCachedAudio",
             "href": "https://core.telegram.org/bots/api#inlinequeryresultcachedaudio",
             "description": [
+                "Represents a link to an MP3 audio file stored on the Telegram servers. By default, this audio file will be sent by the user. Alternatively, you can use input_message_content to send a message with the specified content instead of the audio.",
                 "Note: This will only work in Telegram versions released after 9 April, 2016. Older clients will ignore them."
             ],
             "fields": [
@@ -6212,7 +6331,9 @@
                     "description": "Optional. Content of the message to be sent instead of the audio"
                 }
             ],
-            "subtype_of": "InlineQueryResult"
+            "subtype_of": [
+                "InlineQueryResult"
+            ]
         },
         "InputMessageContent": {
             "name": "InputMessageContent",
@@ -6273,7 +6394,9 @@
                     "description": "Optional. Disables link previews for links in the sent message"
                 }
             ],
-            "subtype_of": "InputMessageContent"
+            "subtype_of": [
+                "InputMessageContent"
+            ]
         },
         "InputLocationMessageContent": {
             "name": "InputLocationMessageContent",
@@ -6331,7 +6454,9 @@
                     "description": "Optional. For live locations, a maximum distance for proximity alerts about approaching another chat member, in meters. Must be between 1 and 100000 if specified."
                 }
             ],
-            "subtype_of": "InputMessageContent"
+            "subtype_of": [
+                "InputMessageContent"
+            ]
         },
         "InputVenueMessageContent": {
             "name": "InputVenueMessageContent",
@@ -6405,7 +6530,9 @@
                     "description": "Optional. Google Places type of the venue. (See supported types.)"
                 }
             ],
-            "subtype_of": "InputMessageContent"
+            "subtype_of": [
+                "InputMessageContent"
+            ]
         },
         "InputContactMessageContent": {
             "name": "InputContactMessageContent",
@@ -6447,7 +6574,9 @@
                     "description": "Optional. Additional data about the contact in the form of a vCard, 0-2048 bytes"
                 }
             ],
-            "subtype_of": "InputMessageContent"
+            "subtype_of": [
+                "InputMessageContent"
+            ]
         },
         "InputInvoiceMessageContent": {
             "name": "InputInvoiceMessageContent",
@@ -6617,12 +6746,15 @@
                     "description": "Optional. Pass True, if the final price depends on the shipping method"
                 }
             ],
-            "subtype_of": "InputMessageContent"
+            "subtype_of": [
+                "InputMessageContent"
+            ]
         },
         "ChosenInlineResult": {
             "name": "ChosenInlineResult",
             "href": "https://core.telegram.org/bots/api#choseninlineresult",
             "description": [
+                "Represents a result of an inline query that was chosen by the user and sent to their chat partner.",
                 "Note: It is necessary to enable inline feedback via @BotFather in order to receive these objects in updates."
             ],
             "fields": [
@@ -7324,7 +7456,9 @@
                     "description": "Error message"
                 }
             ],
-            "subtype_of": "PassportElementError"
+            "subtype_of": [
+                "PassportElementError"
+            ]
         },
         "PassportElementErrorFrontSide": {
             "name": "PassportElementErrorFrontSide",
@@ -7366,7 +7500,9 @@
                     "description": "Error message"
                 }
             ],
-            "subtype_of": "PassportElementError"
+            "subtype_of": [
+                "PassportElementError"
+            ]
         },
         "PassportElementErrorReverseSide": {
             "name": "PassportElementErrorReverseSide",
@@ -7408,7 +7544,9 @@
                     "description": "Error message"
                 }
             ],
-            "subtype_of": "PassportElementError"
+            "subtype_of": [
+                "PassportElementError"
+            ]
         },
         "PassportElementErrorSelfie": {
             "name": "PassportElementErrorSelfie",
@@ -7450,7 +7588,9 @@
                     "description": "Error message"
                 }
             ],
-            "subtype_of": "PassportElementError"
+            "subtype_of": [
+                "PassportElementError"
+            ]
         },
         "PassportElementErrorFile": {
             "name": "PassportElementErrorFile",
@@ -7492,7 +7632,9 @@
                     "description": "Error message"
                 }
             ],
-            "subtype_of": "PassportElementError"
+            "subtype_of": [
+                "PassportElementError"
+            ]
         },
         "PassportElementErrorFiles": {
             "name": "PassportElementErrorFiles",
@@ -7534,7 +7676,9 @@
                     "description": "Error message"
                 }
             ],
-            "subtype_of": "PassportElementError"
+            "subtype_of": [
+                "PassportElementError"
+            ]
         },
         "PassportElementErrorTranslationFile": {
             "name": "PassportElementErrorTranslationFile",
@@ -7576,7 +7720,9 @@
                     "description": "Error message"
                 }
             ],
-            "subtype_of": "PassportElementError"
+            "subtype_of": [
+                "PassportElementError"
+            ]
         },
         "PassportElementErrorTranslationFiles": {
             "name": "PassportElementErrorTranslationFiles",
@@ -7618,7 +7764,9 @@
                     "description": "Error message"
                 }
             ],
-            "subtype_of": "PassportElementError"
+            "subtype_of": [
+                "PassportElementError"
+            ]
         },
         "PassportElementErrorUnspecified": {
             "name": "PassportElementErrorUnspecified",
@@ -7660,7 +7808,9 @@
                     "description": "Error message"
                 }
             ],
-            "subtype_of": "PassportElementError"
+            "subtype_of": [
+                "PassportElementError"
+            ]
         },
         "Game": {
             "name": "Game",
