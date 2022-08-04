@@ -44,6 +44,9 @@ def scrape():
     current_types = ""
 
     for x in dev_rules.children:
+        if x.name == "h3" or x.name == "hr":
+            current_types = ""
+
         if x.name == "h4":
             anchor = x.find("a")
             name = anchor.get("name")
@@ -103,6 +106,10 @@ def scrape():
 def main():
     print("Starting scrape")
     scrape()
+
+    for k, v in RESULT["types"].items():
+        for x in v.get("subtypes", []):
+            RESULT["types"][x]["subtype_of"] = k
 
     with open("api.json", "w") as f:
         json.dump(RESULT, f, indent=4)

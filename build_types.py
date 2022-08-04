@@ -60,6 +60,48 @@ class Generator:
                 description += f"\n\n{field}"
 
         return description
+
+    def get_arguments(self):
+        arguments = ""
+
+        if self.fields or self.subtypes:
+            arguments += "\n        *,"
+
+        for x in self.fields:
+            arguments += "\n        "
+
+            if x["name"] == "from":
+                arguments += "from_user: "
+            else:
+                arguments += f"{x['name']}: "
+            
+            types = x["types"]
+            if len(types)==1:
+                data = self.types_to_type(types[0])
+                arguments += f"Optional[{data}]" if not x["required"] else data
+            else:
+                data = ", ".join(map(self.types_to_type, types))
+                if not x["required"]:
+                    arguments += f"Optional[Union[{data}]]"
+                else:
+                    arguments += f"Union[{data}]"
+            
+            arguments += " = None" if not x["required"] else ""
+        
+        return arguments
+
+    def get_fields(self):
+        fields = ""
+
+        for x in self.fields:
+            fields += "\n        "
+
+            if x["name"] == "from":
+                fields += "self.from_user = from_user"
+            else:
+                fields += f"self.{x['name']} = {x['name']}"
+        
+        return fields
     
     def get_description_field(
         self, 
@@ -101,6 +143,16 @@ class Generator:
         else:
             return f"`~pybotgram.types.{types}`"
 
+    def types_to_type(self, types: str):
+        if TYPES.get(types, None):
+            return TYPES[types]
+        elif "Array" in types:
+            # Array of String --> List[str]
+            types_list = types.split("Array of ", maxsplit=1)[1]
+            return f"List[{self.types_to_type(types_list)}]"
+        else:
+            return f"\"types.{types}\""
+
     is_optional = lambda _, optional: "" if optional else ", *optional*"
 
 
@@ -108,11 +160,15 @@ def main():
     with open("api.json", "r") as f:
         docs = json.load(f)
     
-    # test
-    update = docs["types"]["Update"]
-    gen = Generator(update["name"], update["description"], update["fields"], [])
-    print(gen.get_file_name())
-    print(gen.get_description())
+    for x in docs["types"].values():
+        name = x["name"]
+        description = x["description"]
+        fields = x.get("fields", [])
+        subtypes = x.get("subtypes", [])
+        class_object = x.get("subtype_of", "Object")
+
+        gen = Generator(name, description, fields, subtypes)
+        file_name = gen.get_file_name()
 
 
 if __name__ == "__main__":

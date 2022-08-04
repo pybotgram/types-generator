@@ -134,7 +134,7 @@
             "name": "WebhookInfo",
             "href": "https://core.telegram.org/bots/api#webhookinfo",
             "description": [
-                "It is safe to use 32-bit signed integers for storing all Integer fields unless otherwise noted."
+                "Describes the current status of a webhook."
             ],
             "fields": [
                 {
@@ -2744,7 +2744,8 @@
                     "required": false,
                     "description": "Optional. Custom title for this user"
                 }
-            ]
+            ],
+            "subtype_of": "ChatMember"
         },
         "ChatMemberAdministrator": {
             "name": "ChatMemberAdministrator",
@@ -2873,7 +2874,8 @@
                     "required": false,
                     "description": "Optional. Custom title for this user"
                 }
-            ]
+            ],
+            "subtype_of": "ChatMember"
         },
         "ChatMemberMember": {
             "name": "ChatMemberMember",
@@ -2898,7 +2900,8 @@
                     "required": true,
                     "description": "Information about the user"
                 }
-            ]
+            ],
+            "subtype_of": "ChatMember"
         },
         "ChatMemberRestricted": {
             "name": "ChatMemberRestricted",
@@ -3003,7 +3006,8 @@
                     "required": true,
                     "description": "Date when restrictions will be lifted for this user; unix time. If 0, then the user is restricted forever"
                 }
-            ]
+            ],
+            "subtype_of": "ChatMember"
         },
         "ChatMemberLeft": {
             "name": "ChatMemberLeft",
@@ -3028,7 +3032,8 @@
                     "required": true,
                     "description": "Information about the user"
                 }
-            ]
+            ],
+            "subtype_of": "ChatMember"
         },
         "ChatMemberBanned": {
             "name": "ChatMemberBanned",
@@ -3061,7 +3066,8 @@
                     "required": true,
                     "description": "Date when restrictions will be lifted for this user; unix time. If 0, then the user is banned forever"
                 }
-            ]
+            ],
+            "subtype_of": "ChatMember"
         },
         "ChatMemberUpdated": {
             "name": "ChatMemberUpdated",
@@ -3330,7 +3336,8 @@
                     "required": true,
                     "description": "Scope type, must be default"
                 }
-            ]
+            ],
+            "subtype_of": "BotCommandScope"
         },
         "BotCommandScopeAllPrivateChats": {
             "name": "BotCommandScopeAllPrivateChats",
@@ -3347,7 +3354,8 @@
                     "required": true,
                     "description": "Scope type, must be all_private_chats"
                 }
-            ]
+            ],
+            "subtype_of": "BotCommandScope"
         },
         "BotCommandScopeAllGroupChats": {
             "name": "BotCommandScopeAllGroupChats",
@@ -3364,7 +3372,8 @@
                     "required": true,
                     "description": "Scope type, must be all_group_chats"
                 }
-            ]
+            ],
+            "subtype_of": "BotCommandScope"
         },
         "BotCommandScopeAllChatAdministrators": {
             "name": "BotCommandScopeAllChatAdministrators",
@@ -3381,7 +3390,8 @@
                     "required": true,
                     "description": "Scope type, must be all_chat_administrators"
                 }
-            ]
+            ],
+            "subtype_of": "BotCommandScope"
         },
         "BotCommandScopeChat": {
             "name": "BotCommandScopeChat",
@@ -3407,7 +3417,8 @@
                     "required": true,
                     "description": "Unique identifier for the target chat or username of the target supergroup (in the format @supergroupusername)"
                 }
-            ]
+            ],
+            "subtype_of": "BotCommandScope"
         },
         "BotCommandScopeChatAdministrators": {
             "name": "BotCommandScopeChatAdministrators",
@@ -3433,7 +3444,8 @@
                     "required": true,
                     "description": "Unique identifier for the target chat or username of the target supergroup (in the format @supergroupusername)"
                 }
-            ]
+            ],
+            "subtype_of": "BotCommandScope"
         },
         "BotCommandScopeChatMember": {
             "name": "BotCommandScopeChatMember",
@@ -3467,7 +3479,8 @@
                     "required": true,
                     "description": "Unique identifier of the target user"
                 }
-            ]
+            ],
+            "subtype_of": "BotCommandScope"
         },
         "MenuButton": {
             "name": "MenuButton",
@@ -3496,7 +3509,8 @@
                     "required": true,
                     "description": "Type of the button, must be commands"
                 }
-            ]
+            ],
+            "subtype_of": "MenuButton"
         },
         "MenuButtonWebApp": {
             "name": "MenuButtonWebApp",
@@ -3529,7 +3543,8 @@
                     "required": true,
                     "description": "Description of the Web App that will be launched when the user presses the button. The Web App will be able to send an arbitrary message on behalf of the user using the method answerWebAppQuery."
                 }
-            ]
+            ],
+            "subtype_of": "MenuButton"
         },
         "MenuButtonDefault": {
             "name": "MenuButtonDefault",
@@ -3546,7 +3561,8 @@
                     "required": true,
                     "description": "Type of the button, must be default"
                 }
-            ]
+            ],
+            "subtype_of": "MenuButton"
         },
         "ResponseParameters": {
             "name": "ResponseParameters",
@@ -3639,7 +3655,8 @@
                     "required": false,
                     "description": "Optional. List of special entities that appear in the caption, which can be specified instead of parse_mode"
                 }
-            ]
+            ],
+            "subtype_of": "InputMedia"
         },
         "InputMediaVideo": {
             "name": "InputMediaVideo",
@@ -3729,7 +3746,8 @@
                     "required": false,
                     "description": "Optional. Pass True, if the uploaded video is suitable for streaming"
                 }
-            ]
+            ],
+            "subtype_of": "InputMedia"
         },
         "InputMediaAnimation": {
             "name": "InputMediaAnimation",
@@ -3811,7 +3829,8 @@
                     "required": false,
                     "description": "Optional. Animation duration in seconds"
                 }
-            ]
+            ],
+            "subtype_of": "InputMedia"
         },
         "InputMediaAudio": {
             "name": "InputMediaAudio",
@@ -3893,7 +3912,8 @@
                     "required": false,
                     "description": "Optional. Title of the audio"
                 }
-            ]
+            ],
+            "subtype_of": "InputMedia"
         },
         "InputMediaDocument": {
             "name": "InputMediaDocument",
@@ -3959,7 +3979,8 @@
                     "required": false,
                     "description": "Optional. Disables automatic server-side content type detection for files uploaded using multipart/form-data. Always True, if the document is sent as part of an album."
                 }
-            ]
+            ],
+            "subtype_of": "InputMedia"
         },
         "InputFile": {
             "name": "InputFile",
@@ -4360,7 +4381,8 @@
                     "required": false,
                     "description": "Optional. Thumbnail height"
                 }
-            ]
+            ],
+            "subtype_of": "InlineQueryResult"
         },
         "InlineQueryResultPhoto": {
             "name": "InlineQueryResultPhoto",
@@ -4473,7 +4495,8 @@
                     "required": false,
                     "description": "Optional. Content of the message to be sent instead of the photo"
                 }
-            ]
+            ],
+            "subtype_of": "InlineQueryResult"
         },
         "InlineQueryResultGif": {
             "name": "InlineQueryResultGif",
@@ -4594,7 +4617,8 @@
                     "required": false,
                     "description": "Optional. Content of the message to be sent instead of the GIF animation"
                 }
-            ]
+            ],
+            "subtype_of": "InlineQueryResult"
         },
         "InlineQueryResultMpeg4Gif": {
             "name": "InlineQueryResultMpeg4Gif",
@@ -4715,7 +4739,8 @@
                     "required": false,
                     "description": "Optional. Content of the message to be sent instead of the video animation"
                 }
-            ]
+            ],
+            "subtype_of": "InlineQueryResult"
         },
         "InlineQueryResultVideo": {
             "name": "InlineQueryResultVideo",
@@ -4844,7 +4869,8 @@
                     "required": false,
                     "description": "Optional. Content of the message to be sent instead of the video. This field is required if InlineQueryResultVideo is used to send an HTML-page as a result (e.g., a YouTube video)."
                 }
-            ]
+            ],
+            "subtype_of": "InlineQueryResult"
         },
         "InlineQueryResultAudio": {
             "name": "InlineQueryResultAudio",
@@ -4941,7 +4967,8 @@
                     "required": false,
                     "description": "Optional. Content of the message to be sent instead of the audio"
                 }
-            ]
+            ],
+            "subtype_of": "InlineQueryResult"
         },
         "InlineQueryResultVoice": {
             "name": "InlineQueryResultVoice",
@@ -5030,7 +5057,8 @@
                     "required": false,
                     "description": "Optional. Content of the message to be sent instead of the voice recording"
                 }
-            ]
+            ],
+            "subtype_of": "InlineQueryResult"
         },
         "InlineQueryResultDocument": {
             "name": "InlineQueryResultDocument",
@@ -5151,7 +5179,8 @@
                     "required": false,
                     "description": "Optional. Thumbnail height"
                 }
-            ]
+            ],
+            "subtype_of": "InlineQueryResult"
         },
         "InlineQueryResultLocation": {
             "name": "InlineQueryResultLocation",
@@ -5272,7 +5301,8 @@
                     "required": false,
                     "description": "Optional. Thumbnail height"
                 }
-            ]
+            ],
+            "subtype_of": "InlineQueryResult"
         },
         "InlineQueryResultVenue": {
             "name": "InlineQueryResultVenue",
@@ -5401,7 +5431,8 @@
                     "required": false,
                     "description": "Optional. Thumbnail height"
                 }
-            ]
+            ],
+            "subtype_of": "InlineQueryResult"
         },
         "InlineQueryResultContact": {
             "name": "InlineQueryResultContact",
@@ -5498,7 +5529,8 @@
                     "required": false,
                     "description": "Optional. Thumbnail height"
                 }
-            ]
+            ],
+            "subtype_of": "InlineQueryResult"
         },
         "InlineQueryResultGame": {
             "name": "InlineQueryResultGame",
@@ -5539,7 +5571,8 @@
                     "required": false,
                     "description": "Optional. Inline keyboard attached to the message"
                 }
-            ]
+            ],
+            "subtype_of": "InlineQueryResult"
         },
         "InlineQueryResultCachedPhoto": {
             "name": "InlineQueryResultCachedPhoto",
@@ -5628,7 +5661,8 @@
                     "required": false,
                     "description": "Optional. Content of the message to be sent instead of the photo"
                 }
-            ]
+            ],
+            "subtype_of": "InlineQueryResult"
         },
         "InlineQueryResultCachedGif": {
             "name": "InlineQueryResultCachedGif",
@@ -5709,7 +5743,8 @@
                     "required": false,
                     "description": "Optional. Content of the message to be sent instead of the GIF animation"
                 }
-            ]
+            ],
+            "subtype_of": "InlineQueryResult"
         },
         "InlineQueryResultCachedMpeg4Gif": {
             "name": "InlineQueryResultCachedMpeg4Gif",
@@ -5790,7 +5825,8 @@
                     "required": false,
                     "description": "Optional. Content of the message to be sent instead of the video animation"
                 }
-            ]
+            ],
+            "subtype_of": "InlineQueryResult"
         },
         "InlineQueryResultCachedSticker": {
             "name": "InlineQueryResultCachedSticker",
@@ -5839,7 +5875,8 @@
                     "required": false,
                     "description": "Optional. Content of the message to be sent instead of the sticker"
                 }
-            ]
+            ],
+            "subtype_of": "InlineQueryResult"
         },
         "InlineQueryResultCachedDocument": {
             "name": "InlineQueryResultCachedDocument",
@@ -5928,7 +5965,8 @@
                     "required": false,
                     "description": "Optional. Content of the message to be sent instead of the file"
                 }
-            ]
+            ],
+            "subtype_of": "InlineQueryResult"
         },
         "InlineQueryResultCachedVideo": {
             "name": "InlineQueryResultCachedVideo",
@@ -6017,7 +6055,8 @@
                     "required": false,
                     "description": "Optional. Content of the message to be sent instead of the video"
                 }
-            ]
+            ],
+            "subtype_of": "InlineQueryResult"
         },
         "InlineQueryResultCachedVoice": {
             "name": "InlineQueryResultCachedVoice",
@@ -6098,7 +6137,8 @@
                     "required": false,
                     "description": "Optional. Content of the message to be sent instead of the voice message"
                 }
-            ]
+            ],
+            "subtype_of": "InlineQueryResult"
         },
         "InlineQueryResultCachedAudio": {
             "name": "InlineQueryResultCachedAudio",
@@ -6171,7 +6211,8 @@
                     "required": false,
                     "description": "Optional. Content of the message to be sent instead of the audio"
                 }
-            ]
+            ],
+            "subtype_of": "InlineQueryResult"
         },
         "InputMessageContent": {
             "name": "InputMessageContent",
@@ -6231,7 +6272,8 @@
                     "required": false,
                     "description": "Optional. Disables link previews for links in the sent message"
                 }
-            ]
+            ],
+            "subtype_of": "InputMessageContent"
         },
         "InputLocationMessageContent": {
             "name": "InputLocationMessageContent",
@@ -6288,7 +6330,8 @@
                     "required": false,
                     "description": "Optional. For live locations, a maximum distance for proximity alerts about approaching another chat member, in meters. Must be between 1 and 100000 if specified."
                 }
-            ]
+            ],
+            "subtype_of": "InputMessageContent"
         },
         "InputVenueMessageContent": {
             "name": "InputVenueMessageContent",
@@ -6361,7 +6404,8 @@
                     "required": false,
                     "description": "Optional. Google Places type of the venue. (See supported types.)"
                 }
-            ]
+            ],
+            "subtype_of": "InputMessageContent"
         },
         "InputContactMessageContent": {
             "name": "InputContactMessageContent",
@@ -6402,7 +6446,8 @@
                     "required": false,
                     "description": "Optional. Additional data about the contact in the form of a vCard, 0-2048 bytes"
                 }
-            ]
+            ],
+            "subtype_of": "InputMessageContent"
         },
         "InputInvoiceMessageContent": {
             "name": "InputInvoiceMessageContent",
@@ -6571,7 +6616,8 @@
                     "required": false,
                     "description": "Optional. Pass True, if the final price depends on the shipping method"
                 }
-            ]
+            ],
+            "subtype_of": "InputMessageContent"
         },
         "ChosenInlineResult": {
             "name": "ChosenInlineResult",
@@ -6626,7 +6672,7 @@
             "name": "SentWebAppMessage",
             "href": "https://core.telegram.org/bots/api#sentwebappmessage",
             "description": [
-                "Your bot can accept payments from Telegram users. Please see the introduction to payments for more details on the process and how to set up payments for your bot. Please note that users will need Telegram v.4.0 or higher to use payments (released on May 18, 2017)."
+                "Describes an inline message sent by a Web App on behalf of a user."
             ],
             "fields": [
                 {
@@ -6954,7 +7000,7 @@
             "name": "PreCheckoutQuery",
             "href": "https://core.telegram.org/bots/api#precheckoutquery",
             "description": [
-                "Telegram Passport is a unified authorization method for services that require personal identification. Users can upload their documents once, then instantly share their data with services that require real-world ID (finance, ICOs, etc.). Please see the manual for details."
+                "This object contains information about an incoming pre-checkout query."
             ],
             "fields": [
                 {
@@ -7277,7 +7323,8 @@
                     "required": true,
                     "description": "Error message"
                 }
-            ]
+            ],
+            "subtype_of": "PassportElementError"
         },
         "PassportElementErrorFrontSide": {
             "name": "PassportElementErrorFrontSide",
@@ -7318,7 +7365,8 @@
                     "required": true,
                     "description": "Error message"
                 }
-            ]
+            ],
+            "subtype_of": "PassportElementError"
         },
         "PassportElementErrorReverseSide": {
             "name": "PassportElementErrorReverseSide",
@@ -7359,7 +7407,8 @@
                     "required": true,
                     "description": "Error message"
                 }
-            ]
+            ],
+            "subtype_of": "PassportElementError"
         },
         "PassportElementErrorSelfie": {
             "name": "PassportElementErrorSelfie",
@@ -7400,7 +7449,8 @@
                     "required": true,
                     "description": "Error message"
                 }
-            ]
+            ],
+            "subtype_of": "PassportElementError"
         },
         "PassportElementErrorFile": {
             "name": "PassportElementErrorFile",
@@ -7441,7 +7491,8 @@
                     "required": true,
                     "description": "Error message"
                 }
-            ]
+            ],
+            "subtype_of": "PassportElementError"
         },
         "PassportElementErrorFiles": {
             "name": "PassportElementErrorFiles",
@@ -7482,7 +7533,8 @@
                     "required": true,
                     "description": "Error message"
                 }
-            ]
+            ],
+            "subtype_of": "PassportElementError"
         },
         "PassportElementErrorTranslationFile": {
             "name": "PassportElementErrorTranslationFile",
@@ -7523,7 +7575,8 @@
                     "required": true,
                     "description": "Error message"
                 }
-            ]
+            ],
+            "subtype_of": "PassportElementError"
         },
         "PassportElementErrorTranslationFiles": {
             "name": "PassportElementErrorTranslationFiles",
@@ -7564,22 +7617,14 @@
                     "required": true,
                     "description": "Error message"
                 }
-            ]
+            ],
+            "subtype_of": "PassportElementError"
         },
         "PassportElementErrorUnspecified": {
             "name": "PassportElementErrorUnspecified",
             "href": "https://core.telegram.org/bots/api#passportelementerrorunspecified",
             "description": [
-                "Your bot can offer users HTML5 games to play solo or to compete against each other in groups and one-on-one chats. Create games via @BotFather using the /newgame command. Please note that this kind of power requires responsibility: you will need to accept the terms for each game that your bots will be offering.",
-                "- Games are a new type of content on Telegram, represented by the Game and InlineQueryResultGame objects.",
-                "- Once you've created a game via BotFather, you can send games to chats as regular messages using the sendGame method, or use inline mode with InlineQueryResultGame.",
-                "- If you send the game message without any buttons, it will automatically have a 'Play GameName' button. When this button is pressed, your bot gets a CallbackQuery with the game_short_name of the requested game. You provide the correct URL for this particular user and the app opens the game in the in-app browser.",
-                "- You can manually add multiple buttons to your game message. Please note that the first button in the first row must always launch the game, using the field callback_game in InlineKeyboardButton. You can add extra buttons according to taste: e.g., for a description of the rules, or to open the game's official community.",
-                "- To make your game more attractive, you can upload a GIF animation that demostrates the game to the users via BotFather (see Lumberjack for example).",
-                "- A game message will also display high scores for the current chat. Use setGameScore to post high scores to the chat with the game, add the edit_message parameter to automatically update the message with the current scoreboard.",
-                "- Use getGameHighScores to get data for in-game high score tables.",
-                "- You can also add an extra sharing button for users to share their best score to different chats.",
-                "- For examples of what can be done using this new stuff, check the @gamebot and @gamee bots."
+                "Represents an issue in an unspecified place. The error is considered resolved when new data is added."
             ],
             "fields": [
                 {
@@ -7615,17 +7660,7 @@
                     "description": "Error message"
                 }
             ],
-            "subtypes": [
-                "Games are a new type of content on Telegram, represented by the Game and InlineQueryResultGame objects.",
-                "Once you've created a game via BotFather, you can send games to chats as regular messages using the sendGame method, or use inline mode with InlineQueryResultGame.",
-                "If you send the game message without any buttons, it will automatically have a 'Play GameName' button. When this button is pressed, your bot gets a CallbackQuery with the game_short_name of the requested game. You provide the correct URL for this particular user and the app opens the game in the in-app browser.",
-                "You can manually add multiple buttons to your game message. Please note that the first button in the first row must always launch the game, using the field callback_game in InlineKeyboardButton. You can add extra buttons according to taste: e.g., for a description of the rules, or to open the game's official community.",
-                "To make your game more attractive, you can upload a GIF animation that demostrates the game to the users via BotFather (see Lumberjack for example).",
-                "A game message will also display high scores for the current chat. Use setGameScore to post high scores to the chat with the game, add the edit_message parameter to automatically update the message with the current scoreboard.",
-                "Use getGameHighScores to get data for in-game high score tables.",
-                "You can also add an extra sharing button for users to share their best score to different chats.",
-                "For examples of what can be done using this new stuff, check the @gamebot and @gamee bots."
-            ]
+            "subtype_of": "PassportElementError"
         },
         "Game": {
             "name": "Game",
@@ -7695,8 +7730,7 @@
             "name": "GameHighScore",
             "href": "https://core.telegram.org/bots/api#gamehighscore",
             "description": [
-                "And that's about all we've got for now.",
-                "If you've got any questions, please check out our Bot FAQ \u00bb"
+                "This object represents one row of the high scores table for a game."
             ],
             "fields": [
                 {
