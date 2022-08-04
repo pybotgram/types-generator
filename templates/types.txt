@@ -1,0 +1,5 @@
+from typing import Any
+
+from .base import Object
+
+{content}

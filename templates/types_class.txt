@@ -1,0 +1,9 @@
+class {name}({class_object}):
+    """{description}
+    """
+
+    def __init__(
+        self,{arguments}
+        **_kwargs: Any
+    ):
+        {fields}
