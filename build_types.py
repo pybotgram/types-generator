@@ -188,12 +188,14 @@ def main():
     
     with open("templates/types_class.txt") as f:
         template_class = f.read()
-
-    with open("templates/types_subtypes.txt") as f:
-        template_subtypes = f.read()
     
     with open("templates/types.txt") as f:
         template_types = f.read()
+    
+    with open("templates/init.txt") as f:
+        template_init = f.read()
+
+    lst_types = []
     
     for x in docs["types"].values():
         name = x["name"]
@@ -208,6 +210,8 @@ def main():
 
         gen = Generator(name, x["description"], x.get("fields", []), subtypes)
         file_name = gen.get_file_name()
+
+        lst_types.append((name, file_name))
             
         import_set = {"Any", "Dict", "Optional"}
         import_types = ""
@@ -233,6 +237,15 @@ def main():
                     instructions=gen.get_instructions()
                 )
             ))
+
+    with open("types/__init__.py", "w") as f:
+        f.write(template_init.format(
+            lst_all="\n    ".join([f"\"{x[0]}\"" for x in lst_types]),
+            lst_import="\n".join([
+                f"from .{x[1]} import {x[0]}" 
+                for x in lst_types
+            ])
+        ))
 
 
 if __name__ == "__main__":
