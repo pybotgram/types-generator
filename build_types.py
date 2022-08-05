@@ -204,36 +204,18 @@ def main():
         file_name = gen.get_file_name()
 
         if subtypes:
-            arguments = ""
-            fields_subtypes = ""
-            types_subtypes = [
-                [
-                    (y["name"], y["types"][0]) 
-                    for y in docs["types"][x]["fields"]
-                ]
-                for x in subtypes 
-            ]
-            types_common = set.intersection(*map(set, types_subtypes))
-
-            if types_common:
-                arguments += "\n        *,"
-
-            for y in types_common:
-                arguments += "\n        "
-                fields_subtypes += "\n        "
-                arguments += f"{y[0]}: {gen.types_to_type(y[1])},"
-                fields_subtypes += f"self.{y[0]} = {y[0]}"
-            
+            print(f"FIX {name}")
             with open(f"types/{file_name}.py", "w") as f:
                 f.write(template_types.format(
                     content=template_subtypes.format(
                         name=name,
                         description=gen.get_description(),
-                        arguments=arguments,
-                        fields=fields_subtypes,
-                        instructions=gen.get_instructions(),
+                        arguments="# FIXME",
+                        fields="# FIXME",
                         snake_name=file_name
-                    )
+                    ),
+                    import_typing="Any, Dict, Optional",
+                    import_types="\nfrom pybotgram import types"
                 ))
 
         elif isinstance(class_object, list):
@@ -245,6 +227,31 @@ def main():
                     arguments=gen.get_arguments(),
                     fields=gen.get_fields(),
                     instructions=gen.get_instructions()
+                ))
+        else:
+            import_set = {"Any", "Dict", "Optional"}
+            import_types = ""
+            arguments = gen.get_arguments()
+
+            if arguments.find("types.") != -1:
+                import_types += "\nfrom pybotgram import types"
+            if arguments.find("Union") != -1:
+                import_set.add("Union")
+            if arguments.find("List") != -1:
+                import_set.add("List")
+
+            with open(f"types/{file_name}.py", "w") as f:
+                f.write(template_types.format(
+                    import_typing=", ".join(sorted(import_set)),
+                    import_types=import_types,
+                    content=template_class.format(
+                        name=name,
+                        class_object=class_object,
+                        description=gen.get_description(),
+                        arguments=gen.get_arguments(),
+                        fields=gen.get_fields(),
+                        instructions=gen.get_instructions()
+                    )
                 ))
 
 

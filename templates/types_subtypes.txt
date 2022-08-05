@@ -14,8 +14,7 @@ class {name}(Object):
     ) -> Optional[Type["{name}"]]:
         if not (isinstance(data, dict) and data):
             return None
-
-        {instructions}
+        
         _type_{snake_name}: Dict[str, Type["{name}"]] = {{}}
         _type = data.get("")
 

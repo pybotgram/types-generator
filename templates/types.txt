@@ -1,6 +1,7 @@
-from typing import Optional, Dict, Any
+from typing import {import_typing}
 
-import pybotgram
+import pybotgram{import_types}
+
 from .base import Object
 
 
