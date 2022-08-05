@@ -10,37 +10,37 @@ class ChatPermissions(Object):
     a chat.
 
     Parameters:
-        can_send_messages (``bool``, *optional*):
+        can_send_messages (:obj:`bool`, *optional*):
             True, if the user is allowed to send text messages,
             contacts, locations and venues.
 
-        can_send_media_messages (``bool``, *optional*):
+        can_send_media_messages (:obj:`bool`, *optional*):
             True, if the user is allowed to send audios, documents,
             photos, videos, video notes and voice notes, implies
             can_send_messages.
 
-        can_send_polls (``bool``, *optional*):
+        can_send_polls (:obj:`bool`, *optional*):
             True, if the user is allowed to send polls, implies
             can_send_messages.
 
-        can_send_other_messages (``bool``, *optional*):
+        can_send_other_messages (:obj:`bool`, *optional*):
             True, if the user is allowed to send animations, games,
             stickers and use inline bots, implies
             can_send_media_messages.
 
-        can_add_web_page_previews (``bool``, *optional*):
+        can_add_web_page_previews (:obj:`bool`, *optional*):
             True, if the user is allowed to add web page previews to
             their messages, implies can_send_media_messages.
 
-        can_change_info (``bool``, *optional*):
+        can_change_info (:obj:`bool`, *optional*):
             True, if the user is allowed to change the chat title,
             photo and other settings. Ignored in public supergroups.
 
-        can_invite_users (``bool``, *optional*):
+        can_invite_users (:obj:`bool`, *optional*):
             True, if the user is allowed to invite new users to the
             chat.
 
-        can_pin_messages (``bool``, *optional*):
+        can_pin_messages (:obj:`bool`, *optional*):
             True, if the user is allowed to pin messages. Ignored in
             public supergroups.
     """

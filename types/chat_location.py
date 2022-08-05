@@ -10,11 +10,11 @@ class ChatLocation(Object):
     """Represents a location to which a chat is connected.
 
     Parameters:
-        location (`~pybotgram.types.Location`):
+        location (:obj:`~pybotgram.types.Location`):
             The location to which the supergroup is connected. Can't
             be a live location.
 
-        address (``str``):
+        address (:obj:`str`):
             Location address; 1-64 characters, as defined by the chat
             owner.
     """

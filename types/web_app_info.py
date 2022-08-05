@@ -9,7 +9,7 @@ class WebAppInfo(Object):
     """Describes a Web App.
 
     Parameters:
-        url (``str``):
+        url (:obj:`str`):
             An HTTPS URL of a Web App to be opened with additional
             data as specified in Initializing Web Apps.
     """

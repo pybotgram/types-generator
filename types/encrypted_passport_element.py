@@ -11,56 +11,56 @@ class EncryptedPassportElement(Object):
     the bot by the user.
 
     Parameters:
-        type (``str``):
+        type (:obj:`str`):
             Element type. One of "personal_details", "passport",
             "driver_license", "identity_card", "internal_passport",
             "address", "utility_bill", "bank_statement",
             "rental_agreement", "passport_registration",
             "temporary_registration", "phone_number", "email".
 
-        data (``str``, *optional*):
+        data (:obj:`str`, *optional*):
             Base64-encoded encrypted Telegram Passport element data
             provided by the user, available for "personal_details",
             "passport", "driver_license", "identity_card",
             "internal_passport" and "address" types. Can be decrypted
             and verified using the accompanying EncryptedCredentials.
 
-        phone_number (``str``, *optional*):
+        phone_number (:obj:`str`, *optional*):
             User's verified phone number, available only for
             "phone_number" type.
 
-        email (``str``, *optional*):
+        email (:obj:`str`, *optional*):
             User's verified email address, available only for "email"
             type.
 
-        files (List of `~pybotgram.types.PassportFile`, *optional*):
+        files (List of :obj:`~pybotgram.types.PassportFile`, *optional*):
             Array of encrypted files with documents provided by the
             user, available for "utility_bill", "bank_statement",
             "rental_agreement", "passport_registration" and
             "temporary_registration" types. Files can be decrypted and
             verified using the accompanying EncryptedCredentials.
 
-        front_side (`~pybotgram.types.PassportFile`, *optional*):
+        front_side (:obj:`~pybotgram.types.PassportFile`, *optional*):
             Encrypted file with the front side of the document,
             provided by the user. Available for "passport",
             "driver_license", "identity_card" and "internal_passport".
             The file can be decrypted and verified using the
             accompanying EncryptedCredentials.
 
-        reverse_side (`~pybotgram.types.PassportFile`, *optional*):
+        reverse_side (:obj:`~pybotgram.types.PassportFile`, *optional*):
             Encrypted file with the reverse side of the document,
             provided by the user. Available for "driver_license" and
             "identity_card". The file can be decrypted and verified
             using the accompanying EncryptedCredentials.
 
-        selfie (`~pybotgram.types.PassportFile`, *optional*):
+        selfie (:obj:`~pybotgram.types.PassportFile`, *optional*):
             Encrypted file with the selfie of the user holding a
             document, provided by the user; available for "passport",
             "driver_license", "identity_card" and "internal_passport".
             The file can be decrypted and verified using the
             accompanying EncryptedCredentials.
 
-        translation (List of `~pybotgram.types.PassportFile`, *optional*):
+        translation (List of :obj:`~pybotgram.types.PassportFile`, *optional*):
             Array of encrypted files with translated versions of
             documents provided by the user. Available if requested for
             "passport", "driver_license", "identity_card",
@@ -69,7 +69,7 @@ class EncryptedPassportElement(Object):
             "temporary_registration" types. Files can be decrypted and
             verified using the accompanying EncryptedCredentials.
 
-        hash (``str``):
+        hash (:obj:`str`):
             Base64-encoded element hash for using in
             PassportElementErrorUnspecified.
     """

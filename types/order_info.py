@@ -10,16 +10,16 @@ class OrderInfo(Object):
     """This object represents information about an order.
 
     Parameters:
-        name (``str``, *optional*):
+        name (:obj:`str`, *optional*):
             User name.
 
-        phone_number (``str``, *optional*):
+        phone_number (:obj:`str`, *optional*):
             User's phone number.
 
-        email (``str``, *optional*):
+        email (:obj:`str`, *optional*):
             User email.
 
-        shipping_address (`~pybotgram.types.ShippingAddress`, *optional*):
+        shipping_address (:obj:`~pybotgram.types.ShippingAddress`, *optional*):
             User shipping address.
     """
 

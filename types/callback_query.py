@@ -16,32 +16,32 @@ class CallbackQuery(Object):
     present.
 
     Parameters:
-        id (``str``):
+        id (:obj:`str`):
             Unique identifier for this query.
 
-        from_user (`~pybotgram.types.User`):
+        from_user (:obj:`~pybotgram.types.User`):
             Sender.
 
-        message (`~pybotgram.types.Message`, *optional*):
+        message (:obj:`~pybotgram.types.Message`, *optional*):
             Message with the callback button that originated the
             query. Note that message content and message date will not
             be available if the message is too old.
 
-        inline_message_id (``str``, *optional*):
+        inline_message_id (:obj:`str`, *optional*):
             Identifier of the message sent via the bot in inline
             mode, that originated the query.
 
-        chat_instance (``str``):
+        chat_instance (:obj:`str`):
             Global identifier, uniquely corresponding to the chat to
             which the message with the callback button was sent.
             Useful for high scores in games.
 
-        data (``str``, *optional*):
+        data (:obj:`str`, *optional*):
             Data associated with the callback button. Be aware that
             the message originated the query can contain no callback
             buttons with this data.
 
-        game_short_name (``str``, *optional*):
+        game_short_name (:obj:`str`, *optional*):
             Short name of a Game to be returned, serves as the unique
             identifier for the game.
     """

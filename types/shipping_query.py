@@ -10,16 +10,16 @@ class ShippingQuery(Object):
     """This object contains information about an incoming shipping query.
 
     Parameters:
-        id (``str``):
+        id (:obj:`str`):
             Unique query identifier.
 
-        from_user (`~pybotgram.types.User`):
+        from_user (:obj:`~pybotgram.types.User`):
             User who sent the query.
 
-        invoice_payload (``str``):
+        invoice_payload (:obj:`str`):
             Bot specified invoice payload.
 
-        shipping_address (`~pybotgram.types.ShippingAddress`):
+        shipping_address (:obj:`~pybotgram.types.ShippingAddress`):
             User specified shipping address.
     """
 

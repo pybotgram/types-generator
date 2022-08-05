@@ -22,26 +22,26 @@ class KeyboardButton(Object):
     message.
 
     Parameters:
-        text (``str``):
+        text (:obj:`str`):
             Text of the button. If none of the optional fields are
             used, it will be sent as a message when the button is
             pressed.
 
-        request_contact (``bool``, *optional*):
+        request_contact (:obj:`bool`, *optional*):
             If True, the user's phone number will be sent as a
             contact when the button is pressed. Available in private
             chats only.
 
-        request_location (``bool``, *optional*):
+        request_location (:obj:`bool`, *optional*):
             If True, the user's current location will be sent when
             the button is pressed. Available in private chats only.
 
-        request_poll (`~pybotgram.types.KeyboardButtonPollType`, *optional*):
+        request_poll (:obj:`~pybotgram.types.KeyboardButtonPollType`, *optional*):
             If specified, the user will be asked to create a poll and
             send it to the bot when the button is pressed. Available
             in private chats only.
 
-        web_app (`~pybotgram.types.WebAppInfo`, *optional*):
+        web_app (:obj:`~pybotgram.types.WebAppInfo`, *optional*):
             If specified, the described Web App will be launched when
             the button is pressed. The Web App will be able to send a
             "web_app_data" service message. Available in private chats

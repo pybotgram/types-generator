@@ -11,28 +11,28 @@ class Game(Object):
     their short names will act as unique identifiers.
 
     Parameters:
-        title (``str``):
+        title (:obj:`str`):
             Title of the game.
 
-        description (``str``):
+        description (:obj:`str`):
             Description of the game.
 
-        photo (List of `~pybotgram.types.PhotoSize`):
+        photo (List of :obj:`~pybotgram.types.PhotoSize`):
             Photo that will be displayed in the game message in
             chats.
 
-        text (``str``, *optional*):
+        text (:obj:`str`, *optional*):
             Brief description of the game or high scores included in
             the game message. Can be automatically edited to include
             current high scores for the game when the bot calls
             setGameScore, or manually edited using editMessageText.
             0-4096 characters.
 
-        text_entities (List of `~pybotgram.types.MessageEntity`, *optional*):
+        text_entities (List of :obj:`~pybotgram.types.MessageEntity`, *optional*):
             Special entities that appear in text, such as usernames,
             URLs, bot commands, etc.
 
-        animation (`~pybotgram.types.Animation`, *optional*):
+        animation (:obj:`~pybotgram.types.Animation`, *optional*):
             Animation that will be displayed in the game message in
             chats. Upload via BotFather.
     """

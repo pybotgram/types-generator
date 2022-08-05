@@ -11,7 +11,7 @@ class MessageEntity(Object):
     example, hashtags, usernames, URLs, etc.
 
     Parameters:
-        type (``str``):
+        type (:obj:`str`):
             Type of the entity. Currently, can be "mention"
             (@username), "hashtag" (#hashtag), "cashtag" ($USD),
             "bot_command" (/start@jobs_bot), "url"
@@ -23,20 +23,20 @@ class MessageEntity(Object):
             "pre" (monowidth block), "text_link" (for clickable text
             URLs), "text_mention" (for users without usernames).
 
-        offset (``int``):
+        offset (:obj:`int`):
             Offset in UTF-16 code units to the start of the entity.
 
-        length (``int``):
+        length (:obj:`int`):
             Length of the entity in UTF-16 code units.
 
-        url (``str``, *optional*):
+        url (:obj:`str`, *optional*):
             For "text_link" only, URL that will be opened after user
             taps on the text.
 
-        user (`~pybotgram.types.User`, *optional*):
+        user (:obj:`~pybotgram.types.User`, *optional*):
             For "text_mention" only, the mentioned user.
 
-        language (``str``, *optional*):
+        language (:obj:`str`, *optional*):
             For "pre" only, the programming language of the entity
             text.
     """

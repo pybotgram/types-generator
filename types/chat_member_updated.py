@@ -10,22 +10,22 @@ class ChatMemberUpdated(Object):
     """This object represents changes in the status of a chat member.
 
     Parameters:
-        chat (`~pybotgram.types.Chat`):
+        chat (:obj:`~pybotgram.types.Chat`):
             Chat the user belongs to.
 
-        from_user (`~pybotgram.types.User`):
+        from_user (:obj:`~pybotgram.types.User`):
             Performer of the action, which resulted in the change.
 
-        date (``int``):
+        date (:obj:`int`):
             Date the change was done in Unix time.
 
-        old_chat_member (`~pybotgram.types.ChatMember`):
+        old_chat_member (:obj:`~pybotgram.types.ChatMember`):
             Previous information about the chat member.
 
-        new_chat_member (`~pybotgram.types.ChatMember`):
+        new_chat_member (:obj:`~pybotgram.types.ChatMember`):
             New information about the chat member.
 
-        invite_link (`~pybotgram.types.ChatInviteLink`, *optional*):
+        invite_link (:obj:`~pybotgram.types.ChatInviteLink`, *optional*):
             Chat invite link, which was used by the user to join the
             chat; for joining by invite link events only.
     """

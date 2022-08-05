@@ -14,7 +14,7 @@ class LoginUrl(Object):
     Telegram apps support these buttons as of version 5.7.
 
     Parameters:
-        url (``str``):
+        url (:obj:`str`):
             An HTTPS URL to be opened with user authorization data
             added to the query string when the button is pressed. If
             the user refuses to provide authorization data, the
@@ -25,10 +25,10 @@ class LoginUrl(Object):
             and the integrity of the data as described in Checking
             authorization.
 
-        forward_text (``str``, *optional*):
+        forward_text (:obj:`str`, *optional*):
             New text of the button in forwarded messages.
 
-        bot_username (``str``, *optional*):
+        bot_username (:obj:`str`, *optional*):
             Username of a bot, which will be used for user
             authorization. See Setting up a bot for more details. If
             not specified, the current bot's username will be assumed.
@@ -36,7 +36,7 @@ class LoginUrl(Object):
             with the bot. See Linking your domain to the bot for more
             details.
 
-        request_write_access (``bool``, *optional*):
+        request_write_access (:obj:`bool`, *optional*):
             Pass True to request the permission for your bot to send
             messages to the user.
     """

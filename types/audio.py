@@ -11,39 +11,39 @@ class Audio(Object):
     Telegram clients.
 
     Parameters:
-        file_id (``str``):
+        file_id (:obj:`str`):
             Identifier for this file, which can be used to download
             or reuse the file.
 
-        file_unique_id (``str``):
+        file_unique_id (:obj:`str`):
             Unique identifier for this file, which is supposed to be
             the same over time and for different bots. Can't be used
             to download or reuse the file.
 
-        duration (``int``):
+        duration (:obj:`int`):
             Duration of the audio in seconds as defined by sender.
 
-        performer (``str``, *optional*):
+        performer (:obj:`str`, *optional*):
             Performer of the audio as defined by sender or by audio
             tags.
 
-        title (``str``, *optional*):
+        title (:obj:`str`, *optional*):
             Title of the audio as defined by sender or by audio tags.
 
-        file_name (``str``, *optional*):
+        file_name (:obj:`str`, *optional*):
             Original filename as defined by sender.
 
-        mime_type (``str``, *optional*):
+        mime_type (:obj:`str`, *optional*):
             MIME type of the file as defined by sender.
 
-        file_size (``int``, *optional*):
+        file_size (:obj:`int`, *optional*):
             File size in bytes. It can be bigger than 2^31 and some
             programming languages may have difficulty/silent defects
             in interpreting it. But it has at most 52 significant
             bits, so a signed 64-bit integer or double-precision float
             type are safe for storing this value.
 
-        thumb (`~pybotgram.types.PhotoSize`, *optional*):
+        thumb (:obj:`~pybotgram.types.PhotoSize`, *optional*):
             Thumbnail of the album cover to which the music file
             belongs.
     """

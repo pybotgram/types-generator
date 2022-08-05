@@ -10,13 +10,13 @@ class PollAnswer(Object):
     """This object represents an answer of a user in a non-anonymous poll.
 
     Parameters:
-        poll_id (``str``):
+        poll_id (:obj:`str`):
             Unique poll identifier.
 
-        user (`~pybotgram.types.User`):
+        user (:obj:`~pybotgram.types.User`):
             The user, who changed the answer to the poll.
 
-        option_ids (List of ``int``):
+        option_ids (List of :obj:`int`):
             0-based identifiers of answer options, chosen by the
             user. May be empty if the user retracted their vote.
     """

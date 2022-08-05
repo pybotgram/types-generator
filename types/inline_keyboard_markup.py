@@ -13,7 +13,7 @@ class InlineKeyboardMarkup(Object):
     April, 2016. Older clients will display unsupported message.
 
     Parameters:
-        inline_keyboard (List of List of `~pybotgram.types.InlineKeyboardButton`):
+        inline_keyboard (List of List of :obj:`~pybotgram.types.InlineKeyboardButton`):
             Array of button rows, each represented by an Array of
             InlineKeyboardButton objects.
     """

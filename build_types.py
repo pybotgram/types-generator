@@ -150,13 +150,13 @@ class Generator:
 
     def types_to_description(self, types: str):
         if TYPES.get(types, None):
-            return f"``{TYPES[types]}``"
+            return f":obj:`{TYPES[types]}`"
         elif "Array" in types:
             # Array of String --> List of ``str``
             types_list = types.split("Array of ", maxsplit=1)[1]
             return f"List of {self.types_to_description(types_list)}"
         else:
-            return f"`~pybotgram.types.{types}`"
+            return f":obj:`~pybotgram.types.{types}`"
 
     def types_to_type(self, types: str):
         if TYPES.get(types, None):
@@ -200,59 +200,39 @@ def main():
         subtypes = x.get("subtypes", [])
         class_object = x.get("subtype_of", "Object")
 
-        gen = Generator(name, x["description"], x.get("fields", []), subtypes)
-        file_name = gen.get_file_name()
-
         if subtypes:
             print(f"FIX {name}")
-            with open(f"types/{file_name}.py", "w") as f:
-                f.write(template_types.format(
-                    content=template_subtypes.format(
-                        name=name,
-                        description=gen.get_description(),
-                        arguments="# FIXME",
-                        fields="# FIXME",
-                        snake_name=file_name
-                    ),
-                    import_typing="Any, Dict, Optional",
-                    import_types="\nfrom pybotgram import types"
-                ))
-
+            continue
         elif isinstance(class_object, list):
-            with open(f"types/{camel_to_snake(class_object[0])}.py", "a") as f:
-                f.write("\n\n\n" + template_class.format(
-                    name=name, 
-                    class_object=class_object[0],
+            continue
+
+        gen = Generator(name, x["description"], x.get("fields", []), subtypes)
+        file_name = gen.get_file_name()
+            
+        import_set = {"Any", "Dict", "Optional"}
+        import_types = ""
+        arguments = gen.get_arguments()
+
+        if arguments.find("types.") != -1:
+            import_types += "\nfrom pybotgram import types"
+        if arguments.find("Union") != -1:
+            import_set.add("Union")
+        if arguments.find("List") != -1:
+            import_set.add("List")
+
+        with open(f"types/{file_name}.py", "w") as f:
+            f.write(template_types.format(
+                import_typing=", ".join(sorted(import_set)),
+                import_types=import_types,
+                content=template_class.format(
+                    name=name,
+                    class_object=class_object,
                     description=gen.get_description(),
                     arguments=gen.get_arguments(),
                     fields=gen.get_fields(),
                     instructions=gen.get_instructions()
-                ))
-        else:
-            import_set = {"Any", "Dict", "Optional"}
-            import_types = ""
-            arguments = gen.get_arguments()
-
-            if arguments.find("types.") != -1:
-                import_types += "\nfrom pybotgram import types"
-            if arguments.find("Union") != -1:
-                import_set.add("Union")
-            if arguments.find("List") != -1:
-                import_set.add("List")
-
-            with open(f"types/{file_name}.py", "w") as f:
-                f.write(template_types.format(
-                    import_typing=", ".join(sorted(import_set)),
-                    import_types=import_types,
-                    content=template_class.format(
-                        name=name,
-                        class_object=class_object,
-                        description=gen.get_description(),
-                        arguments=gen.get_arguments(),
-                        fields=gen.get_fields(),
-                        instructions=gen.get_instructions()
-                    )
-                ))
+                )
+            ))
 
 
 if __name__ == "__main__":

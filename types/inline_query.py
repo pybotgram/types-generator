@@ -12,20 +12,20 @@ class InlineQuery(Object):
     results.
 
     Parameters:
-        id (``str``):
+        id (:obj:`str`):
             Unique identifier for this query.
 
-        from_user (`~pybotgram.types.User`):
+        from_user (:obj:`~pybotgram.types.User`):
             Sender.
 
-        query (``str``):
+        query (:obj:`str`):
             Text of the query (up to 256 characters).
 
-        offset (``str``):
+        offset (:obj:`str`):
             Offset of the results to be returned, can be controlled
             by the bot.
 
-        chat_type (``str``, *optional*):
+        chat_type (:obj:`str`, *optional*):
             Type of the chat from which the inline query was sent.
             Can be either "sender" for a private chat with the inline
             query sender, "private", "group", "supergroup", or
@@ -33,7 +33,7 @@ class InlineQuery(Object):
             requests sent from official clients and most third-party
             clients, unless the request was sent from a secret chat.
 
-        location (`~pybotgram.types.Location`, *optional*):
+        location (:obj:`~pybotgram.types.Location`, *optional*):
             Sender location, only for bots that request user location.
     """
 

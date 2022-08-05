@@ -10,34 +10,34 @@ class Video(Object):
     """This object represents a video file.
 
     Parameters:
-        file_id (``str``):
+        file_id (:obj:`str`):
             Identifier for this file, which can be used to download
             or reuse the file.
 
-        file_unique_id (``str``):
+        file_unique_id (:obj:`str`):
             Unique identifier for this file, which is supposed to be
             the same over time and for different bots. Can't be used
             to download or reuse the file.
 
-        width (``int``):
+        width (:obj:`int`):
             Video width as defined by sender.
 
-        height (``int``):
+        height (:obj:`int`):
             Video height as defined by sender.
 
-        duration (``int``):
+        duration (:obj:`int`):
             Duration of the video in seconds as defined by sender.
 
-        thumb (`~pybotgram.types.PhotoSize`, *optional*):
+        thumb (:obj:`~pybotgram.types.PhotoSize`, *optional*):
             Video thumbnail.
 
-        file_name (``str``, *optional*):
+        file_name (:obj:`str`, *optional*):
             Original filename as defined by sender.
 
-        mime_type (``str``, *optional*):
+        mime_type (:obj:`str`, *optional*):
             MIME type of the file as defined by sender.
 
-        file_size (``int``, *optional*):
+        file_size (:obj:`int`, *optional*):
             File size in bytes. It can be bigger than 2^31 and some
             programming languages may have difficulty/silent defects
             in interpreting it. But it has at most 52 significant

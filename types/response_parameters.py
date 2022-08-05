@@ -9,7 +9,7 @@ class ResponseParameters(Object):
     """Describes why a request was unsuccessful.
 
     Parameters:
-        migrate_to_chat_id (``int``, *optional*):
+        migrate_to_chat_id (:obj:`int`, *optional*):
             The group has been migrated to a supergroup with the
             specified identifier. This number may have more than 32
             significant bits and some programming languages may have
@@ -18,7 +18,7 @@ class ResponseParameters(Object):
             double-precision float type are safe for storing this
             identifier.
 
-        retry_after (``int``, *optional*):
+        retry_after (:obj:`int`, *optional*):
             In case of exceeding flood control, the number of seconds
             left to wait before the request can be repeated.
     """

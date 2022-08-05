@@ -13,22 +13,22 @@ class ChosenInlineResult(Object):
     order to receive these objects in updates.
 
     Parameters:
-        result_id (``str``):
+        result_id (:obj:`str`):
             The unique identifier for the result that was chosen.
 
-        from_user (`~pybotgram.types.User`):
+        from_user (:obj:`~pybotgram.types.User`):
             The user that chose the result.
 
-        location (`~pybotgram.types.Location`, *optional*):
+        location (:obj:`~pybotgram.types.Location`, *optional*):
             Sender location, only for bots that require user location.
 
-        inline_message_id (``str``, *optional*):
+        inline_message_id (:obj:`str`, *optional*):
             Identifier of the sent inline message. Available only if
             there is an inline keyboard attached to the message. Will
             be also received in callback queries and can be used to
             edit the message.
 
-        query (``str``):
+        query (:obj:`str`):
             The query that was used to obtain the result.
     """
 

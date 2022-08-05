@@ -10,7 +10,7 @@ class VideoChatEnded(Object):
     the chat.
 
     Parameters:
-        duration (``int``):
+        duration (:obj:`int`):
             Video chat duration in seconds.
     """
 

@@ -9,10 +9,10 @@ class PollOption(Object):
     """This object contains information about one answer option in a poll.
 
     Parameters:
-        text (``str``):
+        text (:obj:`str`):
             Option text, 1-100 characters.
 
-        voter_count (``int``):
+        voter_count (:obj:`int`):
             Number of users that voted for this option.
     """
 

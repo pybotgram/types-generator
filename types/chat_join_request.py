@@ -10,19 +10,19 @@ class ChatJoinRequest(Object):
     """Represents a join request sent to a chat.
 
     Parameters:
-        chat (`~pybotgram.types.Chat`):
+        chat (:obj:`~pybotgram.types.Chat`):
             Chat to which the request was sent.
 
-        from_user (`~pybotgram.types.User`):
+        from_user (:obj:`~pybotgram.types.User`):
             User that sent the join request.
 
-        date (``int``):
+        date (:obj:`int`):
             Date the request was sent in Unix time.
 
-        bio (``str``, *optional*):
+        bio (:obj:`str`, *optional*):
             Bio of the user.
 
-        invite_link (`~pybotgram.types.ChatInviteLink`, *optional*):
+        invite_link (:obj:`~pybotgram.types.ChatInviteLink`, *optional*):
             Chat invite link that was used by the user to send the
             join request.
     """

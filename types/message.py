@@ -10,16 +10,16 @@ class Message(Object):
     """This object represents a message.
 
     Parameters:
-        message_id (``int``):
+        message_id (:obj:`int`):
             Unique message identifier inside this chat.
 
-        from_user (`~pybotgram.types.User`, *optional*):
+        from_user (:obj:`~pybotgram.types.User`, *optional*):
             Sender of the message; empty for messages sent to
             channels. For backward compatibility, the field contains a
             fake sender user in non-channel chats, if the message was
             sent on behalf of a chat.
 
-        sender_chat (`~pybotgram.types.Chat`, *optional*):
+        sender_chat (:obj:`~pybotgram.types.Chat`, *optional*):
             Sender of the message, sent on behalf of a chat. For
             example, the channel itself for channel posts, the
             supergroup itself for messages from anonymous group
@@ -29,151 +29,151 @@ class Message(Object):
             sender user in non-channel chats, if the message was sent
             on behalf of a chat.
 
-        date (``int``):
+        date (:obj:`int`):
             Date the message was sent in Unix time.
 
-        chat (`~pybotgram.types.Chat`):
+        chat (:obj:`~pybotgram.types.Chat`):
             Conversation the message belongs to.
 
-        forward_from (`~pybotgram.types.User`, *optional*):
+        forward_from (:obj:`~pybotgram.types.User`, *optional*):
             For forwarded messages, sender of the original message.
 
-        forward_from_chat (`~pybotgram.types.Chat`, *optional*):
+        forward_from_chat (:obj:`~pybotgram.types.Chat`, *optional*):
             For messages forwarded from channels or from anonymous
             administrators, information about the original sender chat.
 
-        forward_from_message_id (``int``, *optional*):
+        forward_from_message_id (:obj:`int`, *optional*):
             For messages forwarded from channels, identifier of the
             original message in the channel.
 
-        forward_signature (``str``, *optional*):
+        forward_signature (:obj:`str`, *optional*):
             For forwarded messages that were originally sent in
             channels or by an anonymous chat administrator, signature
             of the message sender if present.
 
-        forward_sender_name (``str``, *optional*):
+        forward_sender_name (:obj:`str`, *optional*):
             Sender's name for messages forwarded from users who
             disallow adding a link to their account in forwarded
             messages.
 
-        forward_date (``int``, *optional*):
+        forward_date (:obj:`int`, *optional*):
             For forwarded messages, date the original message was
             sent in Unix time.
 
-        is_automatic_forward (``bool``, *optional*):
+        is_automatic_forward (:obj:`bool`, *optional*):
             True, if the message is a channel post that was
             automatically forwarded to the connected discussion group.
 
-        reply_to_message (`~pybotgram.types.Message`, *optional*):
+        reply_to_message (:obj:`~pybotgram.types.Message`, *optional*):
             For replies, the original message. Note that the Message
             object in this field will not contain further
             reply_to_message fields even if it itself is a reply.
 
-        via_bot (`~pybotgram.types.User`, *optional*):
+        via_bot (:obj:`~pybotgram.types.User`, *optional*):
             Bot through which the message was sent.
 
-        edit_date (``int``, *optional*):
+        edit_date (:obj:`int`, *optional*):
             Date the message was last edited in Unix time.
 
-        has_protected_content (``bool``, *optional*):
+        has_protected_content (:obj:`bool`, *optional*):
             True, if the message can't be forwarded.
 
-        media_group_id (``str``, *optional*):
+        media_group_id (:obj:`str`, *optional*):
             The unique identifier of a media message group this
             message belongs to.
 
-        author_signature (``str``, *optional*):
+        author_signature (:obj:`str`, *optional*):
             Signature of the post author for messages in channels, or
             the custom title of an anonymous group administrator.
 
-        text (``str``, *optional*):
+        text (:obj:`str`, *optional*):
             For text messages, the actual UTF-8 text of the message.
 
-        entities (List of `~pybotgram.types.MessageEntity`, *optional*):
+        entities (List of :obj:`~pybotgram.types.MessageEntity`, *optional*):
             For text messages, special entities like usernames, URLs,
             bot commands, etc. that appear in the text.
 
-        animation (`~pybotgram.types.Animation`, *optional*):
+        animation (:obj:`~pybotgram.types.Animation`, *optional*):
             Message is an animation, information about the animation.
             For backward compatibility, when this field is set, the
             document field will also be set.
 
-        audio (`~pybotgram.types.Audio`, *optional*):
+        audio (:obj:`~pybotgram.types.Audio`, *optional*):
             Message is an audio file, information about the file.
 
-        document (`~pybotgram.types.Document`, *optional*):
+        document (:obj:`~pybotgram.types.Document`, *optional*):
             Message is a general file, information about the file.
 
-        photo (List of `~pybotgram.types.PhotoSize`, *optional*):
+        photo (List of :obj:`~pybotgram.types.PhotoSize`, *optional*):
             Message is a photo, available sizes of the photo.
 
-        sticker (`~pybotgram.types.Sticker`, *optional*):
+        sticker (:obj:`~pybotgram.types.Sticker`, *optional*):
             Message is a sticker, information about the sticker.
 
-        video (`~pybotgram.types.Video`, *optional*):
+        video (:obj:`~pybotgram.types.Video`, *optional*):
             Message is a video, information about the video.
 
-        video_note (`~pybotgram.types.VideoNote`, *optional*):
+        video_note (:obj:`~pybotgram.types.VideoNote`, *optional*):
             Message is a video note, information about the video
             message.
 
-        voice (`~pybotgram.types.Voice`, *optional*):
+        voice (:obj:`~pybotgram.types.Voice`, *optional*):
             Message is a voice message, information about the file.
 
-        caption (``str``, *optional*):
+        caption (:obj:`str`, *optional*):
             Caption for the animation, audio, document, photo, video
             or voice.
 
-        caption_entities (List of `~pybotgram.types.MessageEntity`, *optional*):
+        caption_entities (List of :obj:`~pybotgram.types.MessageEntity`, *optional*):
             For messages with a caption, special entities like
             usernames, URLs, bot commands, etc. that appear in the
             caption.
 
-        contact (`~pybotgram.types.Contact`, *optional*):
+        contact (:obj:`~pybotgram.types.Contact`, *optional*):
             Message is a shared contact, information about the
             contact.
 
-        dice (`~pybotgram.types.Dice`, *optional*):
+        dice (:obj:`~pybotgram.types.Dice`, *optional*):
             Message is a dice with random value.
 
-        game (`~pybotgram.types.Game`, *optional*):
+        game (:obj:`~pybotgram.types.Game`, *optional*):
             Message is a game, information about the game. More about
             games ».
 
-        poll (`~pybotgram.types.Poll`, *optional*):
+        poll (:obj:`~pybotgram.types.Poll`, *optional*):
             Message is a native poll, information about the poll.
 
-        venue (`~pybotgram.types.Venue`, *optional*):
+        venue (:obj:`~pybotgram.types.Venue`, *optional*):
             Message is a venue, information about the venue. For
             backward compatibility, when this field is set, the
             location field will also be set.
 
-        location (`~pybotgram.types.Location`, *optional*):
+        location (:obj:`~pybotgram.types.Location`, *optional*):
             Message is a shared location, information about the
             location.
 
-        new_chat_members (List of `~pybotgram.types.User`, *optional*):
+        new_chat_members (List of :obj:`~pybotgram.types.User`, *optional*):
             New members that were added to the group or supergroup
             and information about them (the bot itself may be one of
             these members).
 
-        left_chat_member (`~pybotgram.types.User`, *optional*):
+        left_chat_member (:obj:`~pybotgram.types.User`, *optional*):
             A member was removed from the group, information about
             them (this member may be the bot itself).
 
-        new_chat_title (``str``, *optional*):
+        new_chat_title (:obj:`str`, *optional*):
             A chat title was changed to this value.
 
-        new_chat_photo (List of `~pybotgram.types.PhotoSize`, *optional*):
+        new_chat_photo (List of :obj:`~pybotgram.types.PhotoSize`, *optional*):
             A chat photo was change to this value.
 
-        delete_chat_photo (``bool``, *optional*):
+        delete_chat_photo (:obj:`bool`, *optional*):
             Service message: the chat photo was deleted.
 
-        group_chat_created (``bool``, *optional*):
+        group_chat_created (:obj:`bool`, *optional*):
             Service message: the group has been created.
 
-        supergroup_chat_created (``bool``, *optional*):
+        supergroup_chat_created (:obj:`bool`, *optional*):
             Service message: the supergroup has been created. This
             field can't be received in a message coming through
             updates, because bot can't be a member of a supergroup
@@ -181,18 +181,18 @@ class Message(Object):
             reply_to_message if someone replies to a very first
             message in a directly created supergroup.
 
-        channel_chat_created (``bool``, *optional*):
+        channel_chat_created (:obj:`bool`, *optional*):
             Service message: the channel has been created. This field
             can't be received in a message coming through updates,
             because bot can't be a member of a channel when it is
             created. It can only be found in reply_to_message if
             someone replies to a very first message in a channel.
 
-        message_auto_delete_timer_changed (`~pybotgram.types.MessageAutoDeleteTimerChanged`, *optional*):
+        message_auto_delete_timer_changed (:obj:`~pybotgram.types.MessageAutoDeleteTimerChanged`, *optional*):
             Service message: auto-delete timer settings changed in
             the chat.
 
-        migrate_to_chat_id (``int``, *optional*):
+        migrate_to_chat_id (:obj:`int`, *optional*):
             The group has been migrated to a supergroup with the
             specified identifier. This number may have more than 32
             significant bits and some programming languages may have
@@ -201,7 +201,7 @@ class Message(Object):
             double-precision float type are safe for storing this
             identifier.
 
-        migrate_from_chat_id (``int``, *optional*):
+        migrate_from_chat_id (:obj:`int`, *optional*):
             The supergroup has been migrated from a group with the
             specified identifier. This number may have more than 32
             significant bits and some programming languages may have
@@ -210,46 +210,46 @@ class Message(Object):
             double-precision float type are safe for storing this
             identifier.
 
-        pinned_message (`~pybotgram.types.Message`, *optional*):
+        pinned_message (:obj:`~pybotgram.types.Message`, *optional*):
             Specified message was pinned. Note that the Message
             object in this field will not contain further
             reply_to_message fields even if it is itself a reply.
 
-        invoice (`~pybotgram.types.Invoice`, *optional*):
+        invoice (:obj:`~pybotgram.types.Invoice`, *optional*):
             Message is an invoice for a payment, information about
             the invoice. More about payments ».
 
-        successful_payment (`~pybotgram.types.SuccessfulPayment`, *optional*):
+        successful_payment (:obj:`~pybotgram.types.SuccessfulPayment`, *optional*):
             Message is a service message about a successful payment,
             information about the payment. More about payments ».
 
-        connected_website (``str``, *optional*):
+        connected_website (:obj:`str`, *optional*):
             The domain name of the website on which the user has
             logged in. More about Telegram Login ».
 
-        passport_data (`~pybotgram.types.PassportData`, *optional*):
+        passport_data (:obj:`~pybotgram.types.PassportData`, *optional*):
             Telegram Passport data.
 
-        proximity_alert_triggered (`~pybotgram.types.ProximityAlertTriggered`, *optional*):
+        proximity_alert_triggered (:obj:`~pybotgram.types.ProximityAlertTriggered`, *optional*):
             Service message. A user in the chat triggered another
             user's proximity alert while sharing Live Location.
 
-        video_chat_scheduled (`~pybotgram.types.VideoChatScheduled`, *optional*):
+        video_chat_scheduled (:obj:`~pybotgram.types.VideoChatScheduled`, *optional*):
             Service message: video chat scheduled.
 
-        video_chat_started (`~pybotgram.types.VideoChatStarted`, *optional*):
+        video_chat_started (:obj:`~pybotgram.types.VideoChatStarted`, *optional*):
             Service message: video chat started.
 
-        video_chat_ended (`~pybotgram.types.VideoChatEnded`, *optional*):
+        video_chat_ended (:obj:`~pybotgram.types.VideoChatEnded`, *optional*):
             Service message: video chat ended.
 
-        video_chat_participants_invited (`~pybotgram.types.VideoChatParticipantsInvited`, *optional*):
+        video_chat_participants_invited (:obj:`~pybotgram.types.VideoChatParticipantsInvited`, *optional*):
             Service message: new participants invited to a video chat.
 
-        web_app_data (`~pybotgram.types.WebAppData`, *optional*):
+        web_app_data (:obj:`~pybotgram.types.WebAppData`, *optional*):
             Service message: data sent by a Web App.
 
-        reply_markup (`~pybotgram.types.InlineKeyboardMarkup`, *optional*):
+        reply_markup (:obj:`~pybotgram.types.InlineKeyboardMarkup`, *optional*):
             Inline keyboard attached to the message. login_url
             buttons are represented as ordinary url buttons.
     """

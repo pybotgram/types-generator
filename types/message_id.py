@@ -9,7 +9,7 @@ class MessageId(Object):
     """This object represents a unique message identifier.
 
     Parameters:
-        message_id (``int``):
+        message_id (:obj:`int`):
             Unique message identifier.
     """
 

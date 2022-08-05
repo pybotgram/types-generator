@@ -10,11 +10,11 @@ class PassportData(Object):
     """Describes Telegram Passport data shared with the bot by the user.
 
     Parameters:
-        data (List of `~pybotgram.types.EncryptedPassportElement`):
+        data (List of :obj:`~pybotgram.types.EncryptedPassportElement`):
             Array with information about documents and other Telegram
             Passport elements that was shared with the bot.
 
-        credentials (`~pybotgram.types.EncryptedCredentials`):
+        credentials (:obj:`~pybotgram.types.EncryptedCredentials`):
             Encrypted credentials required to decrypt the data.
     """
 

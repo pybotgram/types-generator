@@ -12,7 +12,7 @@ class Update(Object):
     given update.
 
     Parameters:
-        update_id (``int``):
+        update_id (:obj:`int`):
             The update's unique identifier. Update identifiers start
             from a certain positive number and increase sequentially.
             This ID becomes especially handy if you're using webhooks,
@@ -22,63 +22,63 @@ class Update(Object):
             then identifier of the next update will be chosen randomly
             instead of sequentially.
 
-        message (`~pybotgram.types.Message`, *optional*):
+        message (:obj:`~pybotgram.types.Message`, *optional*):
             New incoming message of any kind - text, photo, sticker,
             etc.
 
-        edited_message (`~pybotgram.types.Message`, *optional*):
+        edited_message (:obj:`~pybotgram.types.Message`, *optional*):
             New version of a message that is known to the bot and was
             edited.
 
-        channel_post (`~pybotgram.types.Message`, *optional*):
+        channel_post (:obj:`~pybotgram.types.Message`, *optional*):
             New incoming channel post of any kind - text, photo,
             sticker, etc.
 
-        edited_channel_post (`~pybotgram.types.Message`, *optional*):
+        edited_channel_post (:obj:`~pybotgram.types.Message`, *optional*):
             New version of a channel post that is known to the bot
             and was edited.
 
-        inline_query (`~pybotgram.types.InlineQuery`, *optional*):
+        inline_query (:obj:`~pybotgram.types.InlineQuery`, *optional*):
             New incoming inline query.
 
-        chosen_inline_result (`~pybotgram.types.ChosenInlineResult`, *optional*):
+        chosen_inline_result (:obj:`~pybotgram.types.ChosenInlineResult`, *optional*):
             The result of an inline query that was chosen by a user
             and sent to their chat partner. Please see our
             documentation on the feedback collecting for details on
             how to enable these updates for your bot.
 
-        callback_query (`~pybotgram.types.CallbackQuery`, *optional*):
+        callback_query (:obj:`~pybotgram.types.CallbackQuery`, *optional*):
             New incoming callback query.
 
-        shipping_query (`~pybotgram.types.ShippingQuery`, *optional*):
+        shipping_query (:obj:`~pybotgram.types.ShippingQuery`, *optional*):
             New incoming shipping query. Only for invoices with
             flexible price.
 
-        pre_checkout_query (`~pybotgram.types.PreCheckoutQuery`, *optional*):
+        pre_checkout_query (:obj:`~pybotgram.types.PreCheckoutQuery`, *optional*):
             New incoming pre-checkout query. Contains full
             information about checkout.
 
-        poll (`~pybotgram.types.Poll`, *optional*):
+        poll (:obj:`~pybotgram.types.Poll`, *optional*):
             New poll state. Bots receive only updates about stopped
             polls and polls, which are sent by the bot.
 
-        poll_answer (`~pybotgram.types.PollAnswer`, *optional*):
+        poll_answer (:obj:`~pybotgram.types.PollAnswer`, *optional*):
             A user changed their answer in a non-anonymous poll. Bots
             receive new votes only in polls that were sent by the bot
             itself.
 
-        my_chat_member (`~pybotgram.types.ChatMemberUpdated`, *optional*):
+        my_chat_member (:obj:`~pybotgram.types.ChatMemberUpdated`, *optional*):
             The bot's chat member status was updated in a chat. For
             private chats, this update is received only when the bot
             is blocked or unblocked by the user.
 
-        chat_member (`~pybotgram.types.ChatMemberUpdated`, *optional*):
+        chat_member (:obj:`~pybotgram.types.ChatMemberUpdated`, *optional*):
             A chat member's status was updated in a chat. The bot
             must be an administrator in the chat and must explicitly
             specify "chat_member" in the list of allowed_updates to
             receive these updates.
 
-        chat_join_request (`~pybotgram.types.ChatJoinRequest`, *optional*):
+        chat_join_request (:obj:`~pybotgram.types.ChatJoinRequest`, *optional*):
             A request to join the chat has been sent. The bot must
             have the can_invite_users administrator right in the chat
             to receive these updates.

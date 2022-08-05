@@ -9,22 +9,22 @@ class ShippingAddress(Object):
     """This object represents a shipping address.
 
     Parameters:
-        country_code (``str``):
+        country_code (:obj:`str`):
             Two-letter ISO 3166-1 alpha-2 country code.
 
-        state (``str``):
+        state (:obj:`str`):
             State, if applicable.
 
-        city (``str``):
+        city (:obj:`str`):
             City.
 
-        street_line1 (``str``):
+        street_line1 (:obj:`str`):
             First line for the address.
 
-        street_line2 (``str``):
+        street_line2 (:obj:`str`):
             Second line for the address.
 
-        post_code (``str``):
+        post_code (:obj:`str`):
             Address post code.
     """
 

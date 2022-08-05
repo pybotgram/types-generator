@@ -11,13 +11,13 @@ class ProximityAlertTriggered(Object):
     a user in the chat triggers a proximity alert set by another user.
 
     Parameters:
-        traveler (`~pybotgram.types.User`):
+        traveler (:obj:`~pybotgram.types.User`):
             User that triggered the alert.
 
-        watcher (`~pybotgram.types.User`):
+        watcher (:obj:`~pybotgram.types.User`):
             User that set the alert.
 
-        distance (``int``):
+        distance (:obj:`int`):
             The distance between the users.
     """
 

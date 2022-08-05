@@ -10,13 +10,13 @@ class ShippingOption(Object):
     """This object represents one shipping option.
 
     Parameters:
-        id (``str``):
+        id (:obj:`str`):
             Shipping option identifier.
 
-        title (``str``):
+        title (:obj:`str`):
             Option title.
 
-        prices (List of `~pybotgram.types.LabeledPrice`):
+        prices (List of :obj:`~pybotgram.types.LabeledPrice`):
             List of price portions.
     """
 

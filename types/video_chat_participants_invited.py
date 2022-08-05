@@ -11,7 +11,7 @@ class VideoChatParticipantsInvited(Object):
     a video chat.
 
     Parameters:
-        users (List of `~pybotgram.types.User`):
+        users (List of :obj:`~pybotgram.types.User`):
             New members that were invited to the video chat.
     """
 
