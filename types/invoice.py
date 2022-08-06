@@ -9,20 +9,20 @@ class Invoice(Object):
     """This object contains basic information about an invoice.
 
     Parameters:
-        title (:obj:`str`):
+        title (:py:obj:`str`):
             Product name.
 
-        description (:obj:`str`):
+        description (:py:obj:`str`):
             Product description.
 
-        start_parameter (:obj:`str`):
+        start_parameter (:py:obj:`str`):
             Unique bot deep-linking parameter that can be used to
             generate this invoice.
 
-        currency (:obj:`str`):
+        currency (:py:obj:`str`):
             Three-letter ISO 4217 currency code.
 
-        total_amount (:obj:`int`):
+        total_amount (:py:obj:`int`):
             Total price in the smallest units of the currency
             (integer, not float/double). For example, for a price of
             US$ 1.45 pass amount = 145. See the exp parameter in

@@ -11,17 +11,17 @@ class Game(Object):
     their short names will act as unique identifiers.
 
     Parameters:
-        title (:obj:`str`):
+        title (:py:obj:`str`):
             Title of the game.
 
-        description (:obj:`str`):
+        description (:py:obj:`str`):
             Description of the game.
 
         photo (List of :obj:`~pybotgram.types.PhotoSize`):
             Photo that will be displayed in the game message in
             chats.
 
-        text (:obj:`str`, *optional*):
+        text (:py:obj:`str`, *optional*):
             Brief description of the game or high scores included in
             the game message. Can be automatically edited to include
             current high scores for the game when the bot calls

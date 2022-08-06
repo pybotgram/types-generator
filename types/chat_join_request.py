@@ -16,10 +16,10 @@ class ChatJoinRequest(Object):
         from_user (:obj:`~pybotgram.types.User`):
             User that sent the join request.
 
-        date (:obj:`int`):
+        date (:py:obj:`int`):
             Date the request was sent in Unix time.
 
-        bio (:obj:`str`, *optional*):
+        bio (:py:obj:`str`, *optional*):
             Bio of the user.
 
         invite_link (:obj:`~pybotgram.types.ChatInviteLink`, *optional*):

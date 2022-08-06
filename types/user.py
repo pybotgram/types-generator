@@ -9,7 +9,7 @@ class User(Object):
     """This object represents a Telegram user or bot.
 
     Parameters:
-        id (:obj:`int`):
+        id (:py:obj:`int`):
             Unique identifier for this user or bot. This number may
             have more than 32 significant bits and some programming
             languages may have difficulty/silent defects in
@@ -17,36 +17,36 @@ class User(Object):
             so a 64-bit integer or double-precision float type are
             safe for storing this identifier.
 
-        is_bot (:obj:`bool`):
+        is_bot (:py:obj:`bool`):
             True, if this user is a bot.
 
-        first_name (:obj:`str`):
+        first_name (:py:obj:`str`):
             User's or bot's first name.
 
-        last_name (:obj:`str`, *optional*):
+        last_name (:py:obj:`str`, *optional*):
             User's or bot's last name.
 
-        username (:obj:`str`, *optional*):
+        username (:py:obj:`str`, *optional*):
             User's or bot's username.
 
-        language_code (:obj:`str`, *optional*):
+        language_code (:py:obj:`str`, *optional*):
             IETF language tag of the user's language.
 
-        is_premium (:obj:`bool`, *optional*):
+        is_premium (:py:obj:`bool`, *optional*):
             True, if this user is a Telegram Premium user.
 
-        added_to_attachment_menu (:obj:`bool`, *optional*):
+        added_to_attachment_menu (:py:obj:`bool`, *optional*):
             True, if this user added the bot to the attachment menu.
 
-        can_join_groups (:obj:`bool`, *optional*):
+        can_join_groups (:py:obj:`bool`, *optional*):
             True, if the bot can be invited to groups. Returned only
             in getMe.
 
-        can_read_all_group_messages (:obj:`bool`, *optional*):
+        can_read_all_group_messages (:py:obj:`bool`, *optional*):
             True, if privacy mode is disabled for the bot. Returned
             only in getMe.
 
-        supports_inline_queries (:obj:`bool`, *optional*):
+        supports_inline_queries (:py:obj:`bool`, *optional*):
             True, if the bot supports inline queries. Returned only
             in getMe.
     """

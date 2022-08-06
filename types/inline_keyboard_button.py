@@ -11,16 +11,16 @@ class InlineKeyboardButton(Object):
     exactly one of the optional fields.
 
     Parameters:
-        text (:obj:`str`):
+        text (:py:obj:`str`):
             Label text on the button.
 
-        url (:obj:`str`, *optional*):
+        url (:py:obj:`str`, *optional*):
             HTTP or tg:// URL to be opened when the button is
             pressed. Links tg://user?id=<user_id> can be used to
             mention a user by their ID without using a username, if
             this is allowed by their privacy settings.
 
-        callback_data (:obj:`str`, *optional*):
+        callback_data (:py:obj:`str`, *optional*):
             Data to be sent in a callback query to the bot when
             button is pressed, 1-64 bytes.
 
@@ -36,7 +36,7 @@ class InlineKeyboardButton(Object):
             Can be used as a replacement for the Telegram Login
             Widget.
 
-        switch_inline_query (:obj:`str`, *optional*):
+        switch_inline_query (:py:obj:`str`, *optional*):
             If set, pressing the button will prompt the user to
             select one of their chats, open that chat and insert the
             bot's username and the specified inline query in the input
@@ -48,7 +48,7 @@ class InlineKeyboardButton(Object):
             user will be automatically returned to the chat they
             switched from, skipping the chat selection screen.
 
-        switch_inline_query_current_chat (:obj:`str`, *optional*):
+        switch_inline_query_current_chat (:py:obj:`str`, *optional*):
             If set, pressing the button will insert the bot's
             username and the specified inline query in the current
             chat's input field. May be empty, in which case only the
@@ -61,7 +61,7 @@ class InlineKeyboardButton(Object):
             user presses the button.  NOTE: This type of button must
             always be the first button in the first row.
 
-        pay (:obj:`bool`, *optional*):
+        pay (:py:obj:`bool`, *optional*):
             Specify True, to send a Pay button.  NOTE: This type of
             button must always be the first button in the first row
             and can only be used in invoice messages.

@@ -9,22 +9,22 @@ class Voice(Object):
     """This object represents a voice note.
 
     Parameters:
-        file_id (:obj:`str`):
+        file_id (:py:obj:`str`):
             Identifier for this file, which can be used to download
             or reuse the file.
 
-        file_unique_id (:obj:`str`):
+        file_unique_id (:py:obj:`str`):
             Unique identifier for this file, which is supposed to be
             the same over time and for different bots. Can't be used
             to download or reuse the file.
 
-        duration (:obj:`int`):
+        duration (:py:obj:`int`):
             Duration of the audio in seconds as defined by sender.
 
-        mime_type (:obj:`str`, *optional*):
+        mime_type (:py:obj:`str`, *optional*):
             MIME type of the file as defined by sender.
 
-        file_size (:obj:`int`, *optional*):
+        file_size (:py:obj:`int`, *optional*):
             File size in bytes. It can be bigger than 2^31 and some
             programming languages may have difficulty/silent defects
             in interpreting it. But it has at most 52 significant

@@ -13,23 +13,23 @@ class File(Object):
     the link expires, a new one can be requested by calling getFile.
 
     Parameters:
-        file_id (:obj:`str`):
+        file_id (:py:obj:`str`):
             Identifier for this file, which can be used to download
             or reuse the file.
 
-        file_unique_id (:obj:`str`):
+        file_unique_id (:py:obj:`str`):
             Unique identifier for this file, which is supposed to be
             the same over time and for different bots. Can't be used
             to download or reuse the file.
 
-        file_size (:obj:`int`, *optional*):
+        file_size (:py:obj:`int`, *optional*):
             File size in bytes. It can be bigger than 2^31 and some
             programming languages may have difficulty/silent defects
             in interpreting it. But it has at most 52 significant
             bits, so a signed 64-bit integer or double-precision float
             type are safe for storing this value.
 
-        file_path (:obj:`str`, *optional*):
+        file_path (:py:obj:`str`, *optional*):
             File path. Use
             https://api.telegram.org/file/bot<token>/<file_path> to
             get the file.

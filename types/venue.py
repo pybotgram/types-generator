@@ -13,24 +13,24 @@ class Venue(Object):
         location (:obj:`~pybotgram.types.Location`):
             Venue location. Can't be a live location.
 
-        title (:obj:`str`):
+        title (:py:obj:`str`):
             Name of the venue.
 
-        address (:obj:`str`):
+        address (:py:obj:`str`):
             Address of the venue.
 
-        foursquare_id (:obj:`str`, *optional*):
+        foursquare_id (:py:obj:`str`, *optional*):
             Foursquare identifier of the venue.
 
-        foursquare_type (:obj:`str`, *optional*):
+        foursquare_type (:py:obj:`str`, *optional*):
             Foursquare type of the venue. (For example,
             "arts_entertainment/default",
             "arts_entertainment/aquarium" or "food/icecream".).
 
-        google_place_id (:obj:`str`, *optional*):
+        google_place_id (:py:obj:`str`, *optional*):
             Google Places identifier of the venue.
 
-        google_place_type (:obj:`str`, *optional*):
+        google_place_type (:py:obj:`str`, *optional*):
             Google Places type of the venue. (See supported types.).
     """
 

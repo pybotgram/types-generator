@@ -14,7 +14,7 @@ class ChatLocation(Object):
             The location to which the supergroup is connected. Can't
             be a live location.
 
-        address (:obj:`str`):
+        address (:py:obj:`str`):
             Location address; 1-64 characters, as defined by the chat
             owner.
     """

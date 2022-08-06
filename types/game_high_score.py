@@ -10,13 +10,13 @@ class GameHighScore(Object):
     """This object represents one row of the high scores table for a game.
 
     Parameters:
-        position (:obj:`int`):
+        position (:py:obj:`int`):
             Position in high score table for the game.
 
         user (:obj:`~pybotgram.types.User`):
             User.
 
-        score (:obj:`int`):
+        score (:py:obj:`int`):
             Score.
     """
 

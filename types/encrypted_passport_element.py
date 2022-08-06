@@ -11,25 +11,25 @@ class EncryptedPassportElement(Object):
     the bot by the user.
 
     Parameters:
-        type (:obj:`str`):
+        type (:py:obj:`str`):
             Element type. One of "personal_details", "passport",
             "driver_license", "identity_card", "internal_passport",
             "address", "utility_bill", "bank_statement",
             "rental_agreement", "passport_registration",
             "temporary_registration", "phone_number", "email".
 
-        data (:obj:`str`, *optional*):
+        data (:py:obj:`str`, *optional*):
             Base64-encoded encrypted Telegram Passport element data
             provided by the user, available for "personal_details",
             "passport", "driver_license", "identity_card",
             "internal_passport" and "address" types. Can be decrypted
             and verified using the accompanying EncryptedCredentials.
 
-        phone_number (:obj:`str`, *optional*):
+        phone_number (:py:obj:`str`, *optional*):
             User's verified phone number, available only for
             "phone_number" type.
 
-        email (:obj:`str`, *optional*):
+        email (:py:obj:`str`, *optional*):
             User's verified email address, available only for "email"
             type.
 
@@ -69,7 +69,7 @@ class EncryptedPassportElement(Object):
             "temporary_registration" types. Files can be decrypted and
             verified using the accompanying EncryptedCredentials.
 
-        hash (:obj:`str`):
+        hash (:py:obj:`str`):
             Base64-encoded element hash for using in
             PassportElementErrorUnspecified.
     """

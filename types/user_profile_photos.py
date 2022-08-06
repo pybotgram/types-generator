@@ -10,7 +10,7 @@ class UserProfilePhotos(Object):
     """This object represent a user's profile pictures.
 
     Parameters:
-        total_count (:obj:`int`):
+        total_count (:py:obj:`int`):
             Total number of profile pictures the target user has.
 
         photos (List of List of :obj:`~pybotgram.types.PhotoSize`):

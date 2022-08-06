@@ -9,26 +9,26 @@ class Location(Object):
     """This object represents a point on the map.
 
     Parameters:
-        longitude (:obj:`float`):
+        longitude (:py:obj:`float`):
             Longitude as defined by sender.
 
-        latitude (:obj:`float`):
+        latitude (:py:obj:`float`):
             Latitude as defined by sender.
 
-        horizontal_accuracy (:obj:`float`, *optional*):
+        horizontal_accuracy (:py:obj:`float`, *optional*):
             The radius of uncertainty for the location, measured in
             meters; 0-1500.
 
-        live_period (:obj:`int`, *optional*):
+        live_period (:py:obj:`int`, *optional*):
             Time relative to the message sending date, during which
             the location can be updated; in seconds. For active live
             locations only.
 
-        heading (:obj:`int`, *optional*):
+        heading (:py:obj:`int`, *optional*):
             The direction in which user is moving, in degrees; 1-360.
             For active live locations only.
 
-        proximity_alert_radius (:obj:`int`, *optional*):
+        proximity_alert_radius (:py:obj:`int`, *optional*):
             The maximum distance for proximity alerts about
             approaching another chat member, in meters. For sent live
             locations only.

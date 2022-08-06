@@ -10,7 +10,7 @@ class Chat(Object):
     """This object represents a chat.
 
     Parameters:
-        id (:obj:`int`):
+        id (:py:obj:`int`):
             Unique identifier for this chat. This number may have
             more than 32 significant bits and some programming
             languages may have difficulty/silent defects in
@@ -18,49 +18,49 @@ class Chat(Object):
             so a signed 64-bit integer or double-precision float type
             are safe for storing this identifier.
 
-        type (:obj:`str`):
+        type (:py:obj:`str`):
             Type of chat, can be either "private", "group",
             "supergroup" or "channel".
 
-        title (:obj:`str`, *optional*):
+        title (:py:obj:`str`, *optional*):
             Title, for supergroups, channels and group chats.
 
-        username (:obj:`str`, *optional*):
+        username (:py:obj:`str`, *optional*):
             Username, for private chats, supergroups and channels if
             available.
 
-        first_name (:obj:`str`, *optional*):
+        first_name (:py:obj:`str`, *optional*):
             First name of the other party in a private chat.
 
-        last_name (:obj:`str`, *optional*):
+        last_name (:py:obj:`str`, *optional*):
             Last name of the other party in a private chat.
 
         photo (:obj:`~pybotgram.types.ChatPhoto`, *optional*):
             Chat photo. Returned only in getChat.
 
-        bio (:obj:`str`, *optional*):
+        bio (:py:obj:`str`, *optional*):
             Bio of the other party in a private chat. Returned only
             in getChat.
 
-        has_private_forwards (:obj:`bool`, *optional*):
+        has_private_forwards (:py:obj:`bool`, *optional*):
             True, if privacy settings of the other party in the
             private chat allows to use tg://user?id=<user_id> links
             only in chats with the user. Returned only in getChat.
 
-        join_to_send_messages (:obj:`bool`, *optional*):
+        join_to_send_messages (:py:obj:`bool`, *optional*):
             True, if users need to join the supergroup before they
             can send messages. Returned only in getChat.
 
-        join_by_request (:obj:`bool`, *optional*):
+        join_by_request (:py:obj:`bool`, *optional*):
             True, if all users directly joining the supergroup need
             to be approved by supergroup administrators. Returned only
             in getChat.
 
-        description (:obj:`str`, *optional*):
+        description (:py:obj:`str`, *optional*):
             Description, for groups, supergroups and channel chats.
             Returned only in getChat.
 
-        invite_link (:obj:`str`, *optional*):
+        invite_link (:py:obj:`str`, *optional*):
             Primary invite link, for groups, supergroups and channel
             chats. Returned only in getChat.
 
@@ -72,29 +72,29 @@ class Chat(Object):
             Default chat member permissions, for groups and
             supergroups. Returned only in getChat.
 
-        slow_mode_delay (:obj:`int`, *optional*):
+        slow_mode_delay (:py:obj:`int`, *optional*):
             For supergroups, the minimum allowed delay between
             consecutive messages sent by each unpriviledged user; in
             seconds. Returned only in getChat.
 
-        message_auto_delete_time (:obj:`int`, *optional*):
+        message_auto_delete_time (:py:obj:`int`, *optional*):
             The time after which all messages sent to the chat will
             be automatically deleted; in seconds. Returned only in
             getChat.
 
-        has_protected_content (:obj:`bool`, *optional*):
+        has_protected_content (:py:obj:`bool`, *optional*):
             True, if messages from the chat can't be forwarded to
             other chats. Returned only in getChat.
 
-        sticker_set_name (:obj:`str`, *optional*):
+        sticker_set_name (:py:obj:`str`, *optional*):
             For supergroups, name of group sticker set. Returned only
             in getChat.
 
-        can_set_sticker_set (:obj:`bool`, *optional*):
+        can_set_sticker_set (:py:obj:`bool`, *optional*):
             True, if the bot can change the group sticker set.
             Returned only in getChat.
 
-        linked_chat_id (:obj:`int`, *optional*):
+        linked_chat_id (:py:obj:`int`, *optional*):
             Unique identifier for the linked chat, i.e. the
             discussion group identifier for a channel and vice versa;
             for supergroups and channel chats. This identifier may be

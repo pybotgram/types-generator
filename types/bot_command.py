@@ -9,11 +9,11 @@ class BotCommand(Object):
     """This object represents a bot command.
 
     Parameters:
-        command (:obj:`str`):
+        command (:py:obj:`str`):
             Text of the command; 1-32 characters. Can contain only
             lowercase English letters, digits and underscores.
 
-        description (:obj:`str`):
+        description (:py:obj:`str`):
             Description of the command; 1-256 characters.
     """
 

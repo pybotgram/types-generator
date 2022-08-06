@@ -12,20 +12,20 @@ class InlineQuery(Object):
     results.
 
     Parameters:
-        id (:obj:`str`):
+        id (:py:obj:`str`):
             Unique identifier for this query.
 
         from_user (:obj:`~pybotgram.types.User`):
             Sender.
 
-        query (:obj:`str`):
+        query (:py:obj:`str`):
             Text of the query (up to 256 characters).
 
-        offset (:obj:`str`):
+        offset (:py:obj:`str`):
             Offset of the results to be returned, can be controlled
             by the bot.
 
-        chat_type (:obj:`str`, *optional*):
+        chat_type (:py:obj:`str`, *optional*):
             Type of the chat from which the inline query was sent.
             Can be either "sender" for a private chat with the inline
             query sender, "private", "group", "supergroup", or

@@ -10,34 +10,34 @@ class Sticker(Object):
     """This object represents a sticker.
 
     Parameters:
-        file_id (:obj:`str`):
+        file_id (:py:obj:`str`):
             Identifier for this file, which can be used to download
             or reuse the file.
 
-        file_unique_id (:obj:`str`):
+        file_unique_id (:py:obj:`str`):
             Unique identifier for this file, which is supposed to be
             the same over time and for different bots. Can't be used
             to download or reuse the file.
 
-        width (:obj:`int`):
+        width (:py:obj:`int`):
             Sticker width.
 
-        height (:obj:`int`):
+        height (:py:obj:`int`):
             Sticker height.
 
-        is_animated (:obj:`bool`):
+        is_animated (:py:obj:`bool`):
             True, if the sticker is animated.
 
-        is_video (:obj:`bool`):
+        is_video (:py:obj:`bool`):
             True, if the sticker is a video sticker.
 
         thumb (:obj:`~pybotgram.types.PhotoSize`, *optional*):
             Sticker thumbnail in the .WEBP or .JPG format.
 
-        emoji (:obj:`str`, *optional*):
+        emoji (:py:obj:`str`, *optional*):
             Emoji associated with the sticker.
 
-        set_name (:obj:`str`, *optional*):
+        set_name (:py:obj:`str`, *optional*):
             Name of the sticker set to which the sticker belongs.
 
         premium_animation (:obj:`~pybotgram.types.File`, *optional*):
@@ -48,7 +48,7 @@ class Sticker(Object):
             For mask stickers, the position where the mask should be
             placed.
 
-        file_size (:obj:`int`, *optional*):
+        file_size (:py:obj:`int`, *optional*):
             File size in bytes.
     """
 

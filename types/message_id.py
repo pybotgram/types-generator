@@ -9,7 +9,7 @@ class MessageId(Object):
     """This object represents a unique message identifier.
 
     Parameters:
-        message_id (:obj:`int`):
+        message_id (:py:obj:`int`):
             Unique message identifier.
     """
 

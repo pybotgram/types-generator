@@ -10,7 +10,7 @@ class KeyboardButtonPollType(Object):
     and sent when the corresponding button is pressed.
 
     Parameters:
-        type (:obj:`str`, *optional*):
+        type (:py:obj:`str`, *optional*):
             If quiz is passed, the user will be allowed to create
             only polls in the quiz mode. If regular is passed, only
             regular polls will be allowed. Otherwise, the user will be

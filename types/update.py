@@ -12,7 +12,7 @@ class Update(Object):
     given update.
 
     Parameters:
-        update_id (:obj:`int`):
+        update_id (:py:obj:`int`):
             The update's unique identifier. Update identifiers start
             from a certain positive number and increase sequentially.
             This ID becomes especially handy if you're using webhooks,

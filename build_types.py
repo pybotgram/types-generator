@@ -150,7 +150,7 @@ class Generator:
 
     def types_to_description(self, types: str):
         if TYPES.get(types, None):
-            return f":obj:`{TYPES[types]}`"
+            return f":py:obj:`{TYPES[types]}`"
         elif "Array" in types:
             # Array of String --> List of ``str``
             types_list = types.split("Array of ", maxsplit=1)[1]

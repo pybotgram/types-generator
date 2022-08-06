@@ -10,7 +10,7 @@ class VideoChatEnded(Object):
     the chat.
 
     Parameters:
-        duration (:obj:`int`):
+        duration (:py:obj:`int`):
             Video chat duration in seconds.
     """
 

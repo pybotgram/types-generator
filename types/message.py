@@ -10,7 +10,7 @@ class Message(Object):
     """This object represents a message.
 
     Parameters:
-        message_id (:obj:`int`):
+        message_id (:py:obj:`int`):
             Unique message identifier inside this chat.
 
         from_user (:obj:`~pybotgram.types.User`, *optional*):
@@ -29,7 +29,7 @@ class Message(Object):
             sender user in non-channel chats, if the message was sent
             on behalf of a chat.
 
-        date (:obj:`int`):
+        date (:py:obj:`int`):
             Date the message was sent in Unix time.
 
         chat (:obj:`~pybotgram.types.Chat`):
@@ -42,25 +42,25 @@ class Message(Object):
             For messages forwarded from channels or from anonymous
             administrators, information about the original sender chat.
 
-        forward_from_message_id (:obj:`int`, *optional*):
+        forward_from_message_id (:py:obj:`int`, *optional*):
             For messages forwarded from channels, identifier of the
             original message in the channel.
 
-        forward_signature (:obj:`str`, *optional*):
+        forward_signature (:py:obj:`str`, *optional*):
             For forwarded messages that were originally sent in
             channels or by an anonymous chat administrator, signature
             of the message sender if present.
 
-        forward_sender_name (:obj:`str`, *optional*):
+        forward_sender_name (:py:obj:`str`, *optional*):
             Sender's name for messages forwarded from users who
             disallow adding a link to their account in forwarded
             messages.
 
-        forward_date (:obj:`int`, *optional*):
+        forward_date (:py:obj:`int`, *optional*):
             For forwarded messages, date the original message was
             sent in Unix time.
 
-        is_automatic_forward (:obj:`bool`, *optional*):
+        is_automatic_forward (:py:obj:`bool`, *optional*):
             True, if the message is a channel post that was
             automatically forwarded to the connected discussion group.
 
@@ -72,21 +72,21 @@ class Message(Object):
         via_bot (:obj:`~pybotgram.types.User`, *optional*):
             Bot through which the message was sent.
 
-        edit_date (:obj:`int`, *optional*):
+        edit_date (:py:obj:`int`, *optional*):
             Date the message was last edited in Unix time.
 
-        has_protected_content (:obj:`bool`, *optional*):
+        has_protected_content (:py:obj:`bool`, *optional*):
             True, if the message can't be forwarded.
 
-        media_group_id (:obj:`str`, *optional*):
+        media_group_id (:py:obj:`str`, *optional*):
             The unique identifier of a media message group this
             message belongs to.
 
-        author_signature (:obj:`str`, *optional*):
+        author_signature (:py:obj:`str`, *optional*):
             Signature of the post author for messages in channels, or
             the custom title of an anonymous group administrator.
 
-        text (:obj:`str`, *optional*):
+        text (:py:obj:`str`, *optional*):
             For text messages, the actual UTF-8 text of the message.
 
         entities (List of :obj:`~pybotgram.types.MessageEntity`, *optional*):
@@ -120,7 +120,7 @@ class Message(Object):
         voice (:obj:`~pybotgram.types.Voice`, *optional*):
             Message is a voice message, information about the file.
 
-        caption (:obj:`str`, *optional*):
+        caption (:py:obj:`str`, *optional*):
             Caption for the animation, audio, document, photo, video
             or voice.
 
@@ -161,19 +161,19 @@ class Message(Object):
             A member was removed from the group, information about
             them (this member may be the bot itself).
 
-        new_chat_title (:obj:`str`, *optional*):
+        new_chat_title (:py:obj:`str`, *optional*):
             A chat title was changed to this value.
 
         new_chat_photo (List of :obj:`~pybotgram.types.PhotoSize`, *optional*):
             A chat photo was change to this value.
 
-        delete_chat_photo (:obj:`bool`, *optional*):
+        delete_chat_photo (:py:obj:`bool`, *optional*):
             Service message: the chat photo was deleted.
 
-        group_chat_created (:obj:`bool`, *optional*):
+        group_chat_created (:py:obj:`bool`, *optional*):
             Service message: the group has been created.
 
-        supergroup_chat_created (:obj:`bool`, *optional*):
+        supergroup_chat_created (:py:obj:`bool`, *optional*):
             Service message: the supergroup has been created. This
             field can't be received in a message coming through
             updates, because bot can't be a member of a supergroup
@@ -181,7 +181,7 @@ class Message(Object):
             reply_to_message if someone replies to a very first
             message in a directly created supergroup.
 
-        channel_chat_created (:obj:`bool`, *optional*):
+        channel_chat_created (:py:obj:`bool`, *optional*):
             Service message: the channel has been created. This field
             can't be received in a message coming through updates,
             because bot can't be a member of a channel when it is
@@ -192,7 +192,7 @@ class Message(Object):
             Service message: auto-delete timer settings changed in
             the chat.
 
-        migrate_to_chat_id (:obj:`int`, *optional*):
+        migrate_to_chat_id (:py:obj:`int`, *optional*):
             The group has been migrated to a supergroup with the
             specified identifier. This number may have more than 32
             significant bits and some programming languages may have
@@ -201,7 +201,7 @@ class Message(Object):
             double-precision float type are safe for storing this
             identifier.
 
-        migrate_from_chat_id (:obj:`int`, *optional*):
+        migrate_from_chat_id (:py:obj:`int`, *optional*):
             The supergroup has been migrated from a group with the
             specified identifier. This number may have more than 32
             significant bits and some programming languages may have
@@ -223,7 +223,7 @@ class Message(Object):
             Message is a service message about a successful payment,
             information about the payment. More about payments ».
 
-        connected_website (:obj:`str`, *optional*):
+        connected_website (:py:obj:`str`, *optional*):
             The domain name of the website on which the user has
             logged in. More about Telegram Login ».
 

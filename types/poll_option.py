@@ -9,10 +9,10 @@ class PollOption(Object):
     """This object contains information about one answer option in a poll.
 
     Parameters:
-        text (:obj:`str`):
+        text (:py:obj:`str`):
             Option text, 1-100 characters.
 
-        voter_count (:obj:`int`):
+        voter_count (:py:obj:`int`):
             Number of users that voted for this option.
     """
 

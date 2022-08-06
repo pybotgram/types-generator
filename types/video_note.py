@@ -11,26 +11,26 @@ class VideoNote(Object):
     of v.4.0).
 
     Parameters:
-        file_id (:obj:`str`):
+        file_id (:py:obj:`str`):
             Identifier for this file, which can be used to download
             or reuse the file.
 
-        file_unique_id (:obj:`str`):
+        file_unique_id (:py:obj:`str`):
             Unique identifier for this file, which is supposed to be
             the same over time and for different bots. Can't be used
             to download or reuse the file.
 
-        length (:obj:`int`):
+        length (:py:obj:`int`):
             Video width and height (diameter of the video message) as
             defined by sender.
 
-        duration (:obj:`int`):
+        duration (:py:obj:`int`):
             Duration of the video in seconds as defined by sender.
 
         thumb (:obj:`~pybotgram.types.PhotoSize`, *optional*):
             Video thumbnail.
 
-        file_size (:obj:`int`, *optional*):
+        file_size (:py:obj:`int`, *optional*):
             File size in bytes.
     """
 

@@ -17,7 +17,7 @@ class ProximityAlertTriggered(Object):
         watcher (:obj:`~pybotgram.types.User`):
             User that set the alert.
 
-        distance (:obj:`int`):
+        distance (:py:obj:`int`):
             The distance between the users.
     """
 

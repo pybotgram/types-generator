@@ -10,10 +10,10 @@ class SuccessfulPayment(Object):
     """This object contains basic information about a successful payment.
 
     Parameters:
-        currency (:obj:`str`):
+        currency (:py:obj:`str`):
             Three-letter ISO 4217 currency code.
 
-        total_amount (:obj:`int`):
+        total_amount (:py:obj:`int`):
             Total price in the smallest units of the currency
             (integer, not float/double). For example, for a price of
             US$ 1.45 pass amount = 145. See the exp parameter in
@@ -21,19 +21,19 @@ class SuccessfulPayment(Object):
             decimal point for each currency (2 for the majority of
             currencies).
 
-        invoice_payload (:obj:`str`):
+        invoice_payload (:py:obj:`str`):
             Bot specified invoice payload.
 
-        shipping_option_id (:obj:`str`, *optional*):
+        shipping_option_id (:py:obj:`str`, *optional*):
             Identifier of the shipping option chosen by the user.
 
         order_info (:obj:`~pybotgram.types.OrderInfo`, *optional*):
             Order information provided by the user.
 
-        telegram_payment_charge_id (:obj:`str`):
+        telegram_payment_charge_id (:py:obj:`str`):
             Telegram payment identifier.
 
-        provider_payment_charge_id (:obj:`str`):
+        provider_payment_charge_id (:py:obj:`str`):
             Provider payment identifier.
     """
 

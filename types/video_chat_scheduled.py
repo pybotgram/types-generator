@@ -10,7 +10,7 @@ class VideoChatScheduled(Object):
     in the chat.
 
     Parameters:
-        start_date (:obj:`int`):
+        start_date (:py:obj:`int`):
             Point in time (Unix timestamp) when the video chat is
             supposed to be started by a chat administrator.
     """

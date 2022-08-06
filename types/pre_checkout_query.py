@@ -10,16 +10,16 @@ class PreCheckoutQuery(Object):
     """This object contains information about an incoming pre-checkout query.
 
     Parameters:
-        id (:obj:`str`):
+        id (:py:obj:`str`):
             Unique query identifier.
 
         from_user (:obj:`~pybotgram.types.User`):
             User who sent the query.
 
-        currency (:obj:`str`):
+        currency (:py:obj:`str`):
             Three-letter ISO 4217 currency code.
 
-        total_amount (:obj:`int`):
+        total_amount (:py:obj:`int`):
             Total price in the smallest units of the currency
             (integer, not float/double). For example, for a price of
             US$ 1.45 pass amount = 145. See the exp parameter in
@@ -27,10 +27,10 @@ class PreCheckoutQuery(Object):
             decimal point for each currency (2 for the majority of
             currencies).
 
-        invoice_payload (:obj:`str`):
+        invoice_payload (:py:obj:`str`):
             Bot specified invoice payload.
 
-        shipping_option_id (:obj:`str`, *optional*):
+        shipping_option_id (:py:obj:`str`, *optional*):
             Identifier of the shipping option chosen by the user.
 
         order_info (:obj:`~pybotgram.types.OrderInfo`, *optional*):

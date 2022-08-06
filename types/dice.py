@@ -9,10 +9,10 @@ class Dice(Object):
     """This object represents an animated emoji that displays a random value.
 
     Parameters:
-        emoji (:obj:`str`):
+        emoji (:py:obj:`str`):
             Emoji on which the dice throw animation is based.
 
-        value (:obj:`int`):
+        value (:py:obj:`int`):
             Value of the dice, 1-6 for "", "" and "" base emoji, 1-5
             for "" and "" base emoji, 1-64 for "" base emoji.
     """

@@ -10,22 +10,22 @@ class PhotoSize(Object):
     thumbnail.
 
     Parameters:
-        file_id (:obj:`str`):
+        file_id (:py:obj:`str`):
             Identifier for this file, which can be used to download
             or reuse the file.
 
-        file_unique_id (:obj:`str`):
+        file_unique_id (:py:obj:`str`):
             Unique identifier for this file, which is supposed to be
             the same over time and for different bots. Can't be used
             to download or reuse the file.
 
-        width (:obj:`int`):
+        width (:py:obj:`int`):
             Photo width.
 
-        height (:obj:`int`):
+        height (:py:obj:`int`):
             Photo height.
 
-        file_size (:obj:`int`, *optional*):
+        file_size (:py:obj:`int`, *optional*):
             File size in bytes.
     """
 

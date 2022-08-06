@@ -16,7 +16,7 @@ class ChatMemberUpdated(Object):
         from_user (:obj:`~pybotgram.types.User`):
             Performer of the action, which resulted in the change.
 
-        date (:obj:`int`):
+        date (:py:obj:`int`):
             Date the change was done in Unix time.
 
         old_chat_member (:obj:`~pybotgram.types.ChatMember`):

@@ -9,16 +9,16 @@ class Contact(Object):
     """This object represents a phone contact.
 
     Parameters:
-        phone_number (:obj:`str`):
+        phone_number (:py:obj:`str`):
             Contact's phone number.
 
-        first_name (:obj:`str`):
+        first_name (:py:obj:`str`):
             Contact's first name.
 
-        last_name (:obj:`str`, *optional*):
+        last_name (:py:obj:`str`, *optional*):
             Contact's last name.
 
-        user_id (:obj:`int`, *optional*):
+        user_id (:py:obj:`int`, *optional*):
             Contact's user identifier in Telegram. This number may
             have more than 32 significant bits and some programming
             languages may have difficulty/silent defects in
@@ -26,7 +26,7 @@ class Contact(Object):
             so a 64-bit integer or double-precision float type are
             safe for storing this identifier.
 
-        vcard (:obj:`str`, *optional*):
+        vcard (:py:obj:`str`, *optional*):
             Additional data about the contact in the form of a vCard.
     """
 

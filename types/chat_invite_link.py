@@ -10,7 +10,7 @@ class ChatInviteLink(Object):
     """Represents an invite link for a chat.
 
     Parameters:
-        invite_link (:obj:`str`):
+        invite_link (:py:obj:`str`):
             The invite link. If the link was created by another chat
             administrator, then the second part of the link will be
             replaced with "…".
@@ -18,29 +18,29 @@ class ChatInviteLink(Object):
         creator (:obj:`~pybotgram.types.User`):
             Creator of the link.
 
-        creates_join_request (:obj:`bool`):
+        creates_join_request (:py:obj:`bool`):
             True, if users joining the chat via the link need to be
             approved by chat administrators.
 
-        is_primary (:obj:`bool`):
+        is_primary (:py:obj:`bool`):
             True, if the link is primary.
 
-        is_revoked (:obj:`bool`):
+        is_revoked (:py:obj:`bool`):
             True, if the link is revoked.
 
-        name (:obj:`str`, *optional*):
+        name (:py:obj:`str`, *optional*):
             Invite link name.
 
-        expire_date (:obj:`int`, *optional*):
+        expire_date (:py:obj:`int`, *optional*):
             Point in time (Unix timestamp) when the link will expire
             or has been expired.
 
-        member_limit (:obj:`int`, *optional*):
+        member_limit (:py:obj:`int`, *optional*):
             The maximum number of users that can be members of the
             chat simultaneously after joining the chat via this invite
             link; 1-99999.
 
-        pending_join_request_count (:obj:`int`, *optional*):
+        pending_join_request_count (:py:obj:`int`, *optional*):
             Number of pending join requests created using this link.
     """
 

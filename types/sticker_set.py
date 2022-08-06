@@ -10,19 +10,19 @@ class StickerSet(Object):
     """This object represents a sticker set.
 
     Parameters:
-        name (:obj:`str`):
+        name (:py:obj:`str`):
             Sticker set name.
 
-        title (:obj:`str`):
+        title (:py:obj:`str`):
             Sticker set title.
 
-        is_animated (:obj:`bool`):
+        is_animated (:py:obj:`bool`):
             True, if the sticker set contains animated stickers.
 
-        is_video (:obj:`bool`):
+        is_video (:py:obj:`bool`):
             True, if the sticker set contains video stickers.
 
-        contains_masks (:obj:`bool`):
+        contains_masks (:py:obj:`bool`):
             True, if the sticker set contains masks.
 
         stickers (List of :obj:`~pybotgram.types.Sticker`):
