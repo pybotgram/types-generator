@@ -20,7 +20,7 @@ class ChatMember(Object):
     Parameters:
         status (:obj:`str`):
             The member's status in the chat. Can be "creator", "administrator",
-            "member", "restricted", "left"
+            "member", "restricted", "left", "kicked"
 
         user (:obj:`~pybotgram.types.User`):
             Information about the user.
