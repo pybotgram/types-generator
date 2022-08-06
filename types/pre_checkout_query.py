@@ -68,7 +68,7 @@ class PreCheckoutQuery(Object):
 
         data = data.copy()
 
-        data["from"] = types.User._parse(data.get("from"), bot)
+        data["from_user"] = types.User._parse(data.get("from"), bot)
         data["order_info"] = types.OrderInfo._parse(
             data.get("order_info"), bot
         )

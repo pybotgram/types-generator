@@ -110,7 +110,10 @@ class Generator:
             if len(x["types"])==1:
                 i = self.types_to_instructions(x["name"], x["types"][0])
                 if i:
-                    instructions += f"\n        data[\"{x['name']}\"] = "
+                    if x["name"] == "from":
+                        instructions += f"\n        data[\"from_user\"] = "
+                    else:
+                        instructions += f"\n        data[\"{x['name']}\"] = "
                     instructions += i
         
         if instructions:

@@ -77,7 +77,7 @@ class CallbackQuery(Object):
 
         data = data.copy()
 
-        data["from"] = types.User._parse(data.get("from"), bot)
+        data["from_user"] = types.User._parse(data.get("from"), bot)
         data["message"] = types.Message._parse(data.get("message"), bot)
 
         return cls(bot=bot, **data)

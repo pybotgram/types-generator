@@ -59,7 +59,7 @@ class ChosenInlineResult(Object):
 
         data = data.copy()
 
-        data["from"] = types.User._parse(data.get("from"), bot)
+        data["from_user"] = types.User._parse(data.get("from"), bot)
         data["location"] = types.Location._parse(data.get("location"), bot)
 
         return cls(bot=bot, **data)

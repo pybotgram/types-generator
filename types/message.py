@@ -397,7 +397,7 @@ class Message(Object):
 
         data = data.copy()
 
-        data["from"] = types.User._parse(data.get("from"), bot)
+        data["from_user"] = types.User._parse(data.get("from"), bot)
         data["sender_chat"] = types.Chat._parse(data.get("sender_chat"), bot)
         data["chat"] = types.Chat._parse(data.get("chat"), bot)
         data["forward_from"] = types.User._parse(data.get("forward_from"), bot)

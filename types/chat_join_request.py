@@ -55,7 +55,7 @@ class ChatJoinRequest(Object):
         data = data.copy()
 
         data["chat"] = types.Chat._parse(data.get("chat"), bot)
-        data["from"] = types.User._parse(data.get("from"), bot)
+        data["from_user"] = types.User._parse(data.get("from"), bot)
         data["invite_link"] = types.ChatInviteLink._parse(
             data.get("invite_link"), bot
         )

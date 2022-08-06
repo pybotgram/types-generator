@@ -48,7 +48,7 @@ class ShippingQuery(Object):
 
         data = data.copy()
 
-        data["from"] = types.User._parse(data.get("from"), bot)
+        data["from_user"] = types.User._parse(data.get("from"), bot)
         data["shipping_address"] = types.ShippingAddress._parse(
             data.get("shipping_address"), bot
         )
