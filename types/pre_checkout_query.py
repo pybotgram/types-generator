@@ -1,9 +1,8 @@
-from typing import Any, Dict, Optional
+from typing import Optional, Dict, Any
 
 import pybotgram
+from .object import Object
 from pybotgram import types
-
-from .base import Object
 
 
 class PreCheckoutQuery(Object):

@@ -1,8 +1,7 @@
-from typing import Any, Dict, Optional
+from typing import Optional, Dict, Any
 
 import pybotgram
-
-from .base import Object
+from .object import Object
 
 
 class MessageAutoDeleteTimerChanged(Object):

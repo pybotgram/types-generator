@@ -1,8 +1,7 @@
-from typing import Any, Dict, List, Optional
+from typing import Optional, List, Dict, Any
 
 import pybotgram
-
-from .base import Object
+from .object import Object
 
 
 class WebhookInfo(Object):

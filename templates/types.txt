@@ -1,8 +1,7 @@
 from typing import {import_typing}
 
-import pybotgram{import_types}
-
-from .base import Object
+import pybotgram
+from .object import Object{import_types}
 
 
 {content}

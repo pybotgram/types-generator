@@ -1,9 +1,8 @@
-from typing import Any, Dict, List, Optional
+from typing import Optional, List, Dict, Any
 
 import pybotgram
+from .object import Object
 from pybotgram import types
-
-from .base import Object
 
 
 class Poll(Object):

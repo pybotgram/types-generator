@@ -229,7 +229,11 @@ def main():
 
         with open(f"types/{file_name}.py", "w") as f:
             f.write(template_types.format(
-                import_typing=", ".join(sorted(import_set)),
+                import_typing=", ".join(sorted(
+                    import_set, 
+                    key=len, 
+                    reverse=True
+                )),
                 import_types=import_types,
                 content=template_class.format(
                     name=name,
