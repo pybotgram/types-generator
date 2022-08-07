@@ -1,37 +1,24 @@
-from typing import Any, Dict, Optional, Type
+from typing import Any, Dict, Type, Optional
 
 import pybotgram
+from .object import Object
 from pybotgram import types
-
-from .base import Object
 
 
 class ChatMember(Object):
     """This object contains information about one member of a chat.
     Currently, the following 6 types of chat members are supported:
-
-    - ChatMemberOwner
-    - ChatMemberAdministrator
-    - ChatMemberMember
-    - ChatMemberRestricted
-    - ChatMemberLeft
-    - ChatMemberBanned
-
-    Parameters:
-        status (:obj:`str`):
-            The member's status in the chat. Can be "creator", "administrator",
-            "member", "restricted", "left", "kicked"
-
-        user (:obj:`~pybotgram.types.User`):
-            Information about the user.
+    - :obj:`~pybotgram.types.ChatMemberOwner`
+    - :obj:`~pybotgram.types.ChatMemberAdministrator`
+    - :obj:`~pybotgram.types.ChatMemberMember`
+    - :obj:`~pybotgram.types.ChatMemberRestricted`
+    - :obj:`~pybotgram.types.ChatMemberLeft`
+    - :obj:`~pybotgram.types.ChatMemberBanned`
     """
 
-    def __init__(
-        self,
-        status: str,
-        user: "types.User",
-        **_kwargs: Any
-    ):
+    def __init__(self, status: str, user: "types.User"):
+        super().__init__()
+
         self.status = status
         self.user = user
 
@@ -39,13 +26,13 @@ class ChatMember(Object):
     def _parse(
         cls, data: Dict[str, Any], bot: "pybotgram.Bot"
     ) -> Optional[Type["ChatMember"]]:
-        data = data.copy()
         if not (isinstance(data, dict) and data):
             return None
 
         data["user"] = types.User._parse(data.get("user"), bot)
         
-        _status_chat_member: Dict[str, Type["ChatMember"]] = {
+        chat_member_status = data.get("status")
+        mapping = {
             "creator": ChatMemberOwner,
             "administrator": ChatMemberAdministrator,
             "member": ChatMemberMember,
@@ -53,12 +40,12 @@ class ChatMember(Object):
             "left": ChatMemberLeft,
             "kicked": ChatMemberBanned
         }
-        _status = data.get("status")
 
-        if cls is ChatMember and _status in _status_chat_member:
-            return _status_chat_member[_status]._parse(data, bot)
+        if chat_member_status in mapping and cls is ChatMember:
+            return mapping[chat_member_status]._parse(data, bot)
 
-        return cls(**data, bot=bot)
+        else:
+            return cls(**data, bot=bot)
 
 
 class ChatMemberOwner(ChatMember):
@@ -86,7 +73,6 @@ class ChatMemberOwner(ChatMember):
     ):
         super().__init__(status="creator", user=user)
         
-        self.user = user
         self.is_anonymous = is_anonymous
         self.custom_title = custom_title
 
@@ -175,7 +161,6 @@ class ChatMemberAdministrator(ChatMember):
     ):
         super().__init__(status="administrator", user=user)
         
-        self.user = user
         self.can_be_edited = can_be_edited
         self.is_anonymous = is_anonymous
         self.can_manage_chat = can_manage_chat
@@ -200,15 +185,8 @@ class ChatMemberMember(ChatMember):
             Information about the user.
     """
 
-    def __init__(
-        self,
-        *,
-        user: "types.User",
-        **_kwargs: Any
-    ):
+    def __init__(self, *, user: "types.User", **_kwargs: Any):
         super().__init__(status="member", user=user)
-        
-        self.user = user
 
 
 class ChatMemberRestricted(ChatMember):
@@ -276,7 +254,6 @@ class ChatMemberRestricted(ChatMember):
     ):
         super().__init__(status="restricted", user=user)
         
-        self.user = user
         self.is_member = is_member
         self.can_change_info = can_change_info
         self.can_invite_users = can_invite_users
@@ -298,15 +275,8 @@ class ChatMemberLeft(ChatMember):
             Information about the user.
     """
 
-    def __init__(
-        self,
-        *,
-        user: "types.User",
-        **_kwargs: Any
-    ):
+    def __init__(self, *, user: "types.User", **_kwargs: Any):
         super().__init__(status="left", user=user)
-        
-        self.user = user
 
 
 class ChatMemberBanned(ChatMember):
@@ -331,5 +301,4 @@ class ChatMemberBanned(ChatMember):
     ):
         super().__init__(status="kicked", user=user)
         
-        self.user = user
         self.until_date = until_date
