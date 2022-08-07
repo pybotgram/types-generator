@@ -1,4 +1,4 @@
-from typing import Optional, List, Dict, Any
+from typing import Optional, Dict, List, Any
 
 import pybotgram
 from .object import Object

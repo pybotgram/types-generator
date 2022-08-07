@@ -247,7 +247,7 @@ def main():
 
     with open("types/__init__.py", "w") as f:
         f.write(template_init.format(
-            lst_all="\n    ".join([f"\"{x[0]}\"" for x in lst_types]),
+            lst_all=",\n    ".join([f"\"{x[0]}\"" for x in lst_types]),
             lst_import="\n".join([
                 f"from .{x[1]} import {x[0]}" 
                 for x in lst_types
