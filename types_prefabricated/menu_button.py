@@ -11,7 +11,7 @@ class MenuButton(Object):
     - :obj:`~pybotgram.types.MenuButtonCommands`
     - :obj:`~pybotgram.types.MenuButtonWebApp`
     - :obj:`~pybotgram.types.MenuButtonDefault`
-    
+
     If a menu button other than MenuButtonDefault is set for a
     private chat, then it is applied in the chat. Otherwise the
     default menu button is applied. By default, the menu button opens
@@ -29,12 +29,12 @@ class MenuButton(Object):
     ) -> Optional[Type["MenuButton"]]:
         if not (isinstance(data, dict) and data):
             return None
-        
+
         menu_button_type = data.get("type")
         mapping = {
             "commands": MenuButtonCommands,
             "web_app": MenuButtonWebApp,
-            "default": MenuButtonDefault
+            "default": MenuButtonDefault,
         }
 
         if menu_button_type in mapping and cls is MenuButton:
@@ -45,8 +45,7 @@ class MenuButton(Object):
 
 
 class MenuButtonCommands(MenuButton):
-    """Represents a menu button, which opens the bot's list of commands.
-    """
+    """Represents a menu button, which opens the bot's list of commands."""
 
     def __init__(self, **_kwargs: Any):
         super().__init__(type="commands")
@@ -66,16 +65,17 @@ class MenuButtonWebApp(MenuButton):
             method answerWebAppQuery.
     """
 
-    def __init__(self, *, text: str, web_app: "types.WebAppInfo", **_kwargs: Any):
+    def __init__(
+        self, *, text: str, web_app: "types.WebAppInfo", **_kwargs: Any
+    ):
         super().__init__(type="web_app")
-        
+
         self.text = text
         self.web_app = web_app
 
 
 class MenuButtonDefault(MenuButton):
-    """Describes that no specific value for the menu button was set.
-    """
+    """Describes that no specific value for the menu button was set."""
 
     def __init__(self, **_kwargs: Any):
         super().__init__(type="default")

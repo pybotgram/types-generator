@@ -30,7 +30,7 @@ class ChatMember(Object):
             return None
 
         data["user"] = types.User._parse(data.get("user"), bot)
-        
+
         chat_member_status = data.get("status")
         mapping = {
             "creator": ChatMemberOwner,
@@ -38,7 +38,7 @@ class ChatMember(Object):
             "member": ChatMemberMember,
             "restricted": ChatMemberRestricted,
             "left": ChatMemberLeft,
-            "kicked": ChatMemberBanned
+            "kicked": ChatMemberBanned,
         }
 
         if chat_member_status in mapping and cls is ChatMember:
@@ -72,7 +72,7 @@ class ChatMemberOwner(ChatMember):
         **_kwargs: Any
     ):
         super().__init__(status="creator", user=user)
-        
+
         self.is_anonymous = is_anonymous
         self.custom_title = custom_title
 
@@ -160,7 +160,7 @@ class ChatMemberAdministrator(ChatMember):
         **_kwargs: Any
     ):
         super().__init__(status="administrator", user=user)
-        
+
         self.can_be_edited = can_be_edited
         self.is_anonymous = is_anonymous
         self.can_manage_chat = can_manage_chat
@@ -253,7 +253,7 @@ class ChatMemberRestricted(ChatMember):
         **_kwargs: Any
     ):
         super().__init__(status="restricted", user=user)
-        
+
         self.is_member = is_member
         self.can_change_info = can_change_info
         self.can_invite_users = can_invite_users
@@ -292,13 +292,7 @@ class ChatMemberBanned(ChatMember):
             time. If 0, then the user is banned forever.
     """
 
-    def __init__(
-        self,
-        *,
-        user: "types.User",
-        until_date: int,
-        **_kwargs: Any
-    ):
+    def __init__(self, *, user: "types.User", until_date: int, **_kwargs: Any):
         super().__init__(status="kicked", user=user)
-        
+
         self.until_date = until_date

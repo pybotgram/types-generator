@@ -58,7 +58,7 @@ class PassportElementErrorDataField(PassportElementError):
         **_kwargs: Any
     ):
         super().__init__(source="data", type=type, message=message)
-        
+
         self.field_name = field_name
         self.data_hash = data_hash
 
@@ -83,15 +83,10 @@ class PassportElementErrorFrontSide(PassportElementError):
     """
 
     def __init__(
-        self,
-        *,
-        type: str,
-        file_hash: str,
-        message: str,
-        **_kwargs: Any
+        self, *, type: str, file_hash: str, message: str, **_kwargs: Any
     ):
         super().__init__(source="front_side", type=type, message=message)
-        
+
         self.file_hash = file_hash
 
 
@@ -114,15 +109,10 @@ class PassportElementErrorReverseSide(PassportElementError):
     """
 
     def __init__(
-        self,
-        *,
-        type: str,
-        file_hash: str,
-        message: str,
-        **_kwargs: Any
+        self, *, type: str, file_hash: str, message: str, **_kwargs: Any
     ):
         super().__init__(source="reverse_side", type=type, message=message)
-        
+
         self.file_hash = file_hash
 
 
@@ -144,15 +134,10 @@ class PassportElementErrorSelfie(PassportElementError):
     """
 
     def __init__(
-        self,
-        *,
-        type: str,
-        file_hash: str,
-        message: str,
-        **_kwargs: Any
+        self, *, type: str, file_hash: str, message: str, **_kwargs: Any
     ):
         super().__init__(source="selfie", type=type, message=message)
-        
+
         self.file_hash = file_hash
 
 
@@ -175,15 +160,10 @@ class PassportElementErrorFile(PassportElementError):
     """
 
     def __init__(
-        self,
-        *,
-        type: str,
-        file_hash: str,
-        message: str,
-        **_kwargs: Any
+        self, *, type: str, file_hash: str, message: str, **_kwargs: Any
     ):
         super().__init__(source="file", type=type, message=message)
-        
+
         self.file_hash = file_hash
 
 
@@ -214,7 +194,7 @@ class PassportElementErrorFiles(PassportElementError):
         **_kwargs: Any
     ):
         super().__init__(source="files", type=type, message=message)
-        
+
         self.file_hashes = file_hashes
 
 
@@ -239,15 +219,10 @@ class PassportElementErrorTranslationFile(PassportElementError):
     """
 
     def __init__(
-        self,
-        *,
-        type: str,
-        file_hash: str,
-        message: str,
-        **_kwargs: Any
+        self, *, type: str, file_hash: str, message: str, **_kwargs: Any
     ):
         super().__init__(source="translation_file", type=type, message=message)
-        
+
         self.file_hash = file_hash
 
 
@@ -279,8 +254,10 @@ class PassportElementErrorTranslationFiles(PassportElementError):
         message: str,
         **_kwargs: Any
     ):
-        super().__init__(source="translation_files", type=type, message=message)
-        
+        super().__init__(
+            source="translation_files", type=type, message=message
+        )
+
         self.file_hashes = file_hashes
 
 
@@ -301,13 +278,8 @@ class PassportElementErrorUnspecified(PassportElementError):
     """
 
     def __init__(
-        self,
-        *,
-        type: str,
-        element_hash: str,
-        message: str,
-        **_kwargs: Any
+        self, *, type: str, element_hash: str, message: str, **_kwargs: Any
     ):
         super().__init__(source="unspecified", type=type, message=message)
-        
+
         self.element_hash = element_hash

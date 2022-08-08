@@ -13,14 +13,14 @@ class InputMedia(Object):
     - :obj:`~pybotgram.types.InputMediaPhoto`
     - :obj:`~pybotgram.types.InputMediaVideo`
     """
-    
+
     def __init__(
         self,
         type: str,
         media: str,
         caption: Optional[str] = None,
         parse_mode: Optional[str] = None,
-        caption_entities: Optional[List["types.MessageEntity"]] = None
+        caption_entities: Optional[List["types.MessageEntity"]] = None,
     ):
         self.type = type
         self.media = media
@@ -67,7 +67,7 @@ class InputMediaPhoto(InputMedia):
             media=media,
             caption=caption,
             parse_mode=parse_mode,
-            caption_entities=caption_entities
+            caption_entities=caption_entities,
         )
 
 
@@ -139,9 +139,9 @@ class InputMediaVideo(InputMedia):
             media=media,
             caption=caption,
             parse_mode=parse_mode,
-            caption_entities=caption_entities
+            caption_entities=caption_entities,
         )
-        
+
         self.thumb = thumb
         self.width = width
         self.height = height
@@ -213,9 +213,9 @@ class InputMediaAnimation(InputMedia):
             media=media,
             caption=caption,
             parse_mode=parse_mode,
-            caption_entities=caption_entities
+            caption_entities=caption_entities,
         )
-        
+
         self.thumb = thumb
         self.width = width
         self.height = height
@@ -285,9 +285,9 @@ class InputMediaAudio(InputMedia):
             media=media,
             caption=caption,
             parse_mode=parse_mode,
-            caption_entities=caption_entities
+            caption_entities=caption_entities,
         )
-        
+
         self.thumb = thumb
         self.duration = duration
         self.performer = performer
@@ -351,8 +351,8 @@ class InputMediaDocument(InputMedia):
             media=media,
             caption=caption,
             parse_mode=parse_mode,
-            caption_entities=caption_entities
+            caption_entities=caption_entities,
         )
-        
+
         self.thumb = thumb
         self.disable_content_type_detection = disable_content_type_detection

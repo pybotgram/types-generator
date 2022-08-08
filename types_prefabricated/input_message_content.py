@@ -14,7 +14,7 @@ class InputMessageContent(Object):
     - :obj:`~pybotgram.types.InputContactMessageContent`
     - :obj:`~pybotgram.types.InputInvoiceMessageContent`
     """
-    
+
     def __init__(self):
         super().__init__()
 
@@ -46,7 +46,7 @@ class InputTextMessageContent(InputMessageContent):
         parse_mode: Optional[str] = None,
         entities: Optional[List["types.MessageEntity"]] = None,
         disable_web_page_preview: Optional[bool] = None
-    ):     
+    ):
         self.message_text = message_text
         self.parse_mode = parse_mode
         self.entities = entities
@@ -302,7 +302,7 @@ class InputInvoiceMessageContent(InputMessageContent):
         send_phone_number_to_provider: Optional[bool] = None,
         send_email_to_provider: Optional[bool] = None,
         is_flexible: Optional[bool] = None
-    ):     
+    ):
         self.title = title
         self.description = description
         self.payload = payload

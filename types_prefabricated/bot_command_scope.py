@@ -27,7 +27,7 @@ class BotCommandScope(Object):
     ) -> Optional[Type["BotCommandScope"]]:
         if not (isinstance(data, dict) and data):
             return None
-        
+
         bot_command_type = data.get("type")
         mapping = {
             "default": BotCommandScopeDefault,
@@ -35,7 +35,7 @@ class BotCommandScope(Object):
             "all_group_chats": BotCommandScopeAllGroupChats,
             "all_chat_administrators": BotCommandScopeAllChatAdministrators,
             "chat_administrators": BotCommandScopeChatAdministrators,
-            "chat_member": BotCommandScopeChatMember
+            "chat_member": BotCommandScopeChatMember,
         }
 
         if bot_command_type in mapping and cls is BotCommandScope:
@@ -56,8 +56,7 @@ class BotCommandScopeDefault(BotCommandScope):
 
 
 class BotCommandScopeAllPrivateChats(BotCommandScope):
-    """Represents the scope of bot commands, covering all private chats.
-    """
+    """Represents the scope of bot commands, covering all private chats."""
 
     def __init__(self, **_kwargs: Any):
         super().__init__(type="all_private_chats")
@@ -92,7 +91,7 @@ class BotCommandScopeChat(BotCommandScope):
 
     def __init__(self, *, chat_id: Union[int, str], **_kwargs: Any):
         super().__init__(type="chat")
-        
+
         self.chat_id = chat_id
 
 
@@ -108,7 +107,7 @@ class BotCommandScopeChatAdministrators(BotCommandScope):
 
     def __init__(self, *, chat_id: Union[int, str], **_kwargs: Any):
         super().__init__(type="chat_administrators")
-        
+
         self.chat_id = chat_id
 
 
@@ -125,8 +124,10 @@ class BotCommandScopeChatMember(BotCommandScope):
             Unique identifier of the target user.
     """
 
-    def __init__(self, *, chat_id: Union[int, str], user_id: int, **_kwargs: Any):
+    def __init__(
+        self, *, chat_id: Union[int, str], user_id: int, **_kwargs: Any
+    ):
         super().__init__(type="chat_member")
-        
+
         self.chat_id = chat_id
         self.user_id = user_id

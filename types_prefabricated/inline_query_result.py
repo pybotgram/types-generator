@@ -90,7 +90,7 @@ class InlineQueryResultArticle(InlineQueryResult):
         thumb_height: Optional[int] = None
     ):
         super().__init__(type="article", id=id)
-        
+
         self.title = title
         self.input_message_content = input_message_content
         self.reply_markup = reply_markup
@@ -253,7 +253,7 @@ class InlineQueryResultGif(InlineQueryResult):
         input_message_content: Optional["types.InputMessageContent"] = None
     ):
         super().__init__(type="gif", id=id)
-        
+
         self.gif_url = gif_url
         self.gif_width = gif_width
         self.gif_height = gif_height
@@ -341,7 +341,7 @@ class InlineQueryResultMpeg4Gif(InlineQueryResult):
         input_message_content: Optional["types.InputMessageContent"] = None
     ):
         super().__init__(type="mpeg4_gif", id=id)
-        
+
         self.mpeg4_url = mpeg4_url
         self.mpeg4_width = mpeg4_width
         self.mpeg4_height = mpeg4_height
@@ -432,7 +432,7 @@ class InlineQueryResultVideo(InlineQueryResult):
         input_message_content: Optional["types.InputMessageContent"] = None
     ):
         super().__init__(type="video", id=id)
-        
+
         self.video_url = video_url
         self.mime_type = mime_type
         self.thumb_url = thumb_url
@@ -505,7 +505,7 @@ class InlineQueryResultAudio(InlineQueryResult):
         input_message_content: Optional["types.InputMessageContent"] = None
     ):
         super().__init__(type="audio", id=id)
-        
+
         self.audio_url = audio_url
         self.title = title
         self.caption = caption
@@ -572,7 +572,7 @@ class InlineQueryResultVoice(InlineQueryResult):
         input_message_content: Optional["types.InputMessageContent"] = None
     ):
         super().__init__(type="voice", id=id)
-        
+
         self.voice_url = voice_url
         self.title = title
         self.caption = caption
@@ -655,7 +655,7 @@ class InlineQueryResultDocument(InlineQueryResult):
         thumb_height: Optional[int] = None
     ):
         super().__init__(type="document", id=id)
-        
+
         self.title = title
         self.caption = caption
         self.parse_mode = parse_mode
@@ -742,7 +742,7 @@ class InlineQueryResultLocation(InlineQueryResult):
         thumb_height: Optional[int] = None
     ):
         super().__init__(type="location", id=id)
-        
+
         self.latitude = latitude
         self.longitude = longitude
         self.title = title
@@ -829,7 +829,7 @@ class InlineQueryResultVenue(InlineQueryResult):
         thumb_height: Optional[int] = None
     ):
         super().__init__(type=type, id=id)
-        
+
         self.latitude = latitude
         self.longitude = longitude
         self.title = title
@@ -901,7 +901,7 @@ class InlineQueryResultContact(InlineQueryResult):
         thumb_height: Optional[int] = None
     ):
         super().__init__(type="contact", id=id)
-        
+
         self.phone_number = phone_number
         self.first_name = first_name
         self.last_name = last_name
@@ -938,7 +938,7 @@ class InlineQueryResultGame(InlineQueryResult):
         reply_markup: Optional["types.InlineKeyboardMarkup"] = None
     ):
         super().__init__(type="game", id=id)
-        
+
         self.game_short_name = game_short_name
         self.reply_markup = reply_markup
 
@@ -995,7 +995,7 @@ class InlineQueryResultCachedPhoto(InlineQueryResult):
         input_message_content: Optional["types.InputMessageContent"] = None
     ):
         super().__init__(type="photo", id=id)
-        
+
         self.photo_file_id = photo_file_id
         self.title = title
         self.description = description
@@ -1056,7 +1056,7 @@ class InlineQueryResultCachedGif(InlineQueryResult):
         input_message_content: Optional["types.InputMessageContent"] = None
     ):
         super().__init__(type="gif", id=id)
-        
+
         self.gif_file_id = gif_file_id
         self.title = title
         self.caption = caption
@@ -1116,7 +1116,7 @@ class InlineQueryResultCachedMpeg4Gif(InlineQueryResult):
         input_message_content: Optional["types.InputMessageContent"] = None
     ):
         super().__init__(type="mpeg4_gif", id=id)
-        
+
         self.mpeg4_file_id = mpeg4_file_id
         self.title = title
         self.caption = caption
@@ -1158,7 +1158,7 @@ class InlineQueryResultCachedSticker(InlineQueryResult):
         input_message_content: Optional["types.InputMessageContent"] = None
     ):
         super().__init__(type="sticker", id=id)
-        
+
         self.sticker_file_id = sticker_file_id
         self.reply_markup = reply_markup
         self.input_message_content = input_message_content
@@ -1218,7 +1218,7 @@ class InlineQueryResultCachedDocument(InlineQueryResult):
         input_message_content: Optional["types.InputMessageContent"] = None
     ):
         super().__init__(type="document", id=id)
-        
+
         self.title = title
         self.document_file_id = document_file_id
         self.description = description
@@ -1281,7 +1281,7 @@ class InlineQueryResultCachedVideo(InlineQueryResult):
         input_message_content: Optional["types.InputMessageContent"] = None
     ):
         super().__init__(type="video", id=id)
-        
+
         self.video_file_id = video_file_id
         self.title = title
         self.description = description
@@ -1342,7 +1342,7 @@ class InlineQueryResultCachedVoice(InlineQueryResult):
         input_message_content: Optional["types.InputMessageContent"] = None
     ):
         super().__init__(type="voice", id=id)
-        
+
         self.voice_file_id = voice_file_id
         self.title = title
         self.caption = caption
@@ -1397,7 +1397,7 @@ class InlineQueryResultCachedAudio(InlineQueryResult):
         input_message_content: Optional["types.InputMessageContent"] = None
     ):
         super().__init__(type="audio", id=id)
-        
+
         self.audio_file_id = audio_file_id
         self.caption = caption
         self.parse_mode = parse_mode
