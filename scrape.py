@@ -1,4 +1,5 @@
 import json
+import re
 
 import requests
 from bs4 import BeautifulSoup, Tag
@@ -12,7 +13,8 @@ TYPES = {
     "Bool": "Boolean",
 }
 RESULT = {
-    "types": {}
+    "types": {},
+    "methods": {}
 }
 
 
@@ -36,74 +38,138 @@ def get_types(t: str):
         return t
 
 
+def get_types_tg(t: str):
+    pref = ""
+    if t.startswith("Array of "):
+        pref = "Array of "
+        t = t[len("Array of "):]
+    
+    types = [
+        z 
+        for x in t.split(" or ") 
+        for y in x.split(", ") 
+        for z in y.split(" and ")
+    ]
+    return [f"{pref}{get_types(x)}" for x in types]
+
+
+def get_return(current_name):
+    desc = "\n".join(RESULT["methods"][current_name]["description"])
+    ret_search = re.search(
+        "(?:on success,|returns)([^.]*)(?:on success)?", 
+        desc, 
+        re.IGNORECASE
+    )
+    ret_search2 = re.search("([^.]*)(?:is returned)", desc, re.IGNORECASE)
+    if ret_search:
+        extract_return(current_name, ret_search.group(1))
+    else:
+        extract_return(current_name, ret_search2.group(1))
+
+
+def extract_return(c: str, t: str):
+    array_match = re.search(r"((?:array of )+\w*)", t, re.IGNORECASE)
+    if array_match:
+        types = get_types_tg(array_match.group(1))
+    else:
+        types = [
+            y 
+            for x in t.split() 
+            for y in get_types_tg(x) 
+            if x[0].isupper()
+        ]
+    
+    RESULT["methods"][c]["returns"] = types
+
+
 def scrape():
     response = requests.get(URL)
     soup = BeautifulSoup(response.text, "html.parser")
     dev_rules = soup.find("div", {"id": "dev_page_content"})
 
-    current_types = ""
+    current_name = ""
+    current_type = ""
 
     for x in dev_rules.children:
         if x.name == "h3" or x.name == "hr":
-            current_types = ""
+            current_name = ""
+            current_type = ""
 
         if x.name == "h4":
             anchor = x.find("a")
             name = anchor.get("name")
-            current_types = x.get_text()
+            current_name = x.get_text()
+            current_type = "types"
 
-            if "-" in name or not current_types[0].isupper():
-                current_types = ""
+            if "-" in name:
+                current_name = ""
+                current_type = ""
                 continue
 
-            print(f"current types: {current_types}")
+            if not current_name[0].isupper():
+                current_type = "methods"
+
+            print(f"current types/methods: {current_name}")
             
-            RESULT["types"][current_types] = {
-                "name": current_types,
+            RESULT[current_type][current_name] = {
+                "name": current_name,
                 "href": f"{URL}#{name}"
             }
         
-        if not current_types:
+        if not current_name or not current_type:
             continue
 
         if x.name == "p":
-            RESULT["types"][current_types].setdefault(
+            RESULT[current_type][current_name].setdefault(
                 "description", 
                 []
             ).extend(get_description(x))
 
         if x.name == "table":
             tbody = x.find("tbody")
-            fields = RESULT["types"][current_types]["fields"] = []
+            fields = RESULT[current_type][current_name]["fields"] = []
 
             for tr in tbody.find_all("tr"):
                 children = list(tr.find_all("td"))
-                if len(children) == 3:
+
+                if len(children) == 3 and current_type == "types":
                     desc = "\n".join(get_description(children[2]))
-                    types = list(map(
-                        get_types, 
-                        children[1].get_text().split(" or ")
-                    ))
                     fields.append(
                         {
                             "name": children[0].get_text(),
-                            "types": types,
+                            "types": get_types_tg(children[1].get_text()),
                             "required": not desc.startswith("Optional. "),
                             "description": desc
                         }
                     )
+                elif len(children) == 4 and current_type == "methods":
+                    desc = "\n".join(get_description(children[3]))
+                    fields.append(
+                        {
+                            "name": children[0].get_text(),
+                            "types": get_types_tg(children[1].get_text()),
+                            "required": children[2].get_text() == "Yes",
+                            "description": desc
+                        }
+                    )
                 else:
-                    print(f"Error: {current_types}")
+                    print(f"Error: {current_name}")
 
         if x.name == "ul":
             subtypes = []
             for li in x.find_all("li"):
                 subtypes.extend(get_description(li))
             
-            RESULT["types"][current_types]["subtypes"] = subtypes
+            RESULT["types"][current_name]["subtypes"] = subtypes
 
             for x in subtypes:
-                RESULT["types"][current_types]["description"].append(f"- {x}")
+                RESULT["types"][current_name]["description"].append(f"- {x}")
+
+        if (
+            current_type == "methods" and 
+            RESULT["methods"][current_name].get("description")
+        ):
+            get_return(current_name)
 
 
 def main():
